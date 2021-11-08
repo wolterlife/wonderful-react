@@ -9,9 +9,10 @@
     <!--   stylesheet   -->
     <link rel="stylesheet" href="css/Normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+    <!--    fonts   -->
+    <link href="https://fonts.googleapis.com/css2?family=Ruda&display=swap" rel="stylesheet">
     <!--    scripts     -->
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
     <script src="js/main.js"></script>
@@ -35,9 +36,9 @@
         <div class="glide">
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
-                    <li class="glide__slide"><img class="slide-unit" src="img/slider_1.png" alt=""></li>
-                    <li class="glide__slide"><img class="slide-unit" src="img/slider_2.png" alt=""></li>
-                    <li class="glide__slide"><img class="slide-unit" src="img/slider_3.png" alt=""></li>
+                    <li class="glide__slide"><img class="slide-unit" src="img/slider-photo/slider_1.png" alt=""></li>
+                    <li class="glide__slide"><img class="slide-unit" src="img/slider-photo/slider_2.png" alt=""></li>
+                    <li class="glide__slide"><img class="slide-unit" src="img/slider-photo/slider_3.png" alt=""></li>
                 </ul>
             </div>
         </div>
@@ -50,11 +51,17 @@
 <div class="menu-d">
     <ul class="menu-main">
         <li class="menu-li"><a href="">e</a></li>
-        <li class="menu-li" onmouseover="colorChange(1)" onmouseout="colorBack(1)"><a href="">Пицца</a></li>
-        <li class="menu-li" onmouseover="colorChange(2)" onmouseout="colorBack(2)"><a href="">Напитки</a></li>
-        <li class="menu-li" onmouseover="colorChange(3)" onmouseout="colorBack(3)"><a href="">Десерты</a></li>
-        <li class="menu-li" onmouseover="colorChange(4)" onmouseout="colorBack(4)"><a href="">Закуски</a></li>
-        <li class="menu-li" onmouseover="colorChange(5)" onmouseout="colorBack(5)"><a href="">Купоны</a></li>
+        <li class="menu-li" onmouseover="colorChange(1)" onmouseout="colorBack(1)"><a id="img_1" href="#pizza">Пицца</a>
+        </li>
+        <li class="menu-li" onmouseover="colorChange(2)" onmouseout="colorBack(2)"><a id="img_2"
+                                                                                      href="#drinks">Напитки</a>
+        </li>
+        <li class="menu-li" onmouseover="colorChange(3)" onmouseout="colorBack(3)"><a id="img_3" href="#desserts">Десерты</a>
+        </li>
+        <li class="menu-li" onmouseover="colorChange(4)" onmouseout="colorBack(4)"><a id="img_4"
+                                                                                      href="#snacks">Закуски</a>
+        </li>
+        <li class="menu-li" onmouseover="colorChange(5)" onmouseout="colorBack(5)"><a id="img_5" href="">Купоны</a></li>
     </ul>
 </div>
 <!--Visual choosing item-->
@@ -78,101 +85,343 @@
     </div>
 </a>
 <!--Items in menu-->
-<p class="upper">Пицца</p>
-
-<div class="line-bef-menu-outside">
-    <div class="line-bef-menu-left"></div>
-    <div class="line-bef-menu-inside"></div>
-    <div class="line-bef-menu-right"></div>
+<a id="pizza"></a>
+<p class="upper-pizza">Пицца</p>
+<div class="smth-with-line">
+    <div class="line-bef-menu-outside">
+        <div class="line-bef-menu-inside"></div>
+    </div>
 </div>
 <div class="all-d">
-    <div class="all-left"></div>
     <div class="all-list">
         <div class="item">
             <img class="item-img" src="img/items/p_1.png" alt="">
             <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла уцу цу цу цуцуц уц уц уцуц</p>
             <div class="item-section">
-                <p class="item-price">2.54</p>
+                <p class="item-price">2.54 руб</p>
                 <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
             </div>
         </div>
         <div class="item">
             <img class="item-img" src="img/items/p_1.png" alt="">
             <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная п</p>
             <div class="item-section">
-                <p class="item-price">2.54</p>
+                <p class="item-price">2.54 руб</p>
                 <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
             </div>
         </div>
         <div class="item">
             <img class="item-img" src="img/items/p_1.png" alt="">
             <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
             <div class="item-section">
-                <p class="item-price">2.54</p>
+                <p class="item-price">2.54 руб</p>
                 <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
             </div>
         </div>
         <div class="item">
             <img class="item-img" src="img/items/p_1.png" alt="">
             <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
             <div class="item-section">
-                <p class="item-price">2.54</p>
+                <p class="item-price">2.54 руб</p>
                 <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
             </div>
         </div>
         <div class="item">
             <img class="item-img" src="img/items/p_1.png" alt="">
             <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
             <div class="item-section">
-                <p class="item-price">2.54</p>
+                <p class="item-price">2.54 руб</p>
                 <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
             </div>
         </div>
         <div class="item">
             <img class="item-img" src="img/items/p_1.png" alt="">
             <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
             <div class="item-section">
-                <p class="item-price">2.54</p>
+                <p class="item-price">2.54 руб</p>
                 <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
             </div>
         </div>
         <div class="item">
             <img class="item-img" src="img/items/p_1.png" alt="">
             <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
             <div class="item-section">
-                <p class="item-price">2.54</p>
+                <p class="item-price">2.54 руб</p>
                 <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
             </div>
         </div>
         <div class="item">
             <img class="item-img" src="img/items/p_1.png" alt="">
             <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
             <div class="item-section">
-                <p class="item-price">2.54</p>
+                <p class="item-price">2.54 руб</p>
                 <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
             </div>
         </div>
         <div class="item">
             <img class="item-img" src="img/items/p_1.png" alt="">
             <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
             <div class="item-section">
-                <p class="item-price">2.54</p>
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
                 <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
             </div>
         </div>
     </div>
-    <div class="all-right"></div>
 </div>
-<div class="line-bef-menu-outside">
-    <div class="line-bef-menu-left"></div>
-    <div class="line-bef-menu-inside"></div>
-    <div class="line-bef-menu-right"></div>
+
+<div class="smth-with-line">
+    <div class="line-bef-menu-outside">
+        <div class="line-bef-menu-inside"></div>
+    </div>
+</div>
+<div class="smth-with-line">
+    <!-- Drinks-->
+    <a id="drinks"></a>
+    <p class="upper">Напитки</p>
+</div>
+<div class="smth-with-line">
+    <div class="line-bef-menu-outside">
+        <div class="line-bef-menu-inside"></div>
+    </div>
+</div>
+<div class="all-d">
+    <div class="all-list">
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла уцу цу цу цуцуц уц уц уцуц</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная п</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="smth-with-line">
+    <div class="line-bef-menu-outside">
+        <div class="line-bef-menu-inside"></div>
+    </div>
+</div>
+<div class="smth-with-line">
+    <!-- Desserts-->
+    <a id="desserts"></a>
+    <p class="upper">Десерты</p>
+</div>
+<div class="smth-with-line">
+    <div class="line-bef-menu-outside">
+        <div class="line-bef-menu-inside"></div>
+    </div>
+</div>
+<div class="all-d">
+    <div class="all-list">
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла уцу цу цу цуцуц уц уц уцуц</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная п</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="smth-with-line">
+    <div class="line-bef-menu-outside">
+        <div class="line-bef-menu-inside"></div>
+    </div>
+</div>
+<div class="smth-with-line">
+    <!-- Snacks-->
+    <a id="snacks"></a>
+    <p class="upper">Закуски</p>
+</div>
+<div class="smth-with-line">
+    <div class="line-bef-menu-outside">
+        <div class="line-bef-menu-inside"></div>
+    </div>
+</div>
+<div class="all-d">
+    <div class="all-list">
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла уцу цу цу цуцуц уц уц уцуц</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная п</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="img/items/p_1.png" alt="">
+            <p class="item-name">Пепперони</p>
+            <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла</p>
+            <div class="item-section">
+                <p class="item-price">2.54 руб</p>
+                <a href=""><img class="item-plus" src="img/plus.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!--Delivery form-->
-<section>
-    Form for delivery will be here
-</section>
+<div class="delivery-div">
+    <div class="delivery-div-form">
+        <form>
+            <div class="delivery-container-img-text">
+                <img class="delivery-person" src="img/person-box.png" alt="">
+                <p class="delivery-main-text">Доставка</p>
+            </div>
+            <div class="form-all-d">
+            <div class="form-all">
+                <div class="name-user">
+                    <p>Имя</p>
+                    <input type="text">
+                </div>
+                <div class="lastname-user">
+                    <p>Фамилия</p>
+                    <input type="text">
+                </div>
+                <div class="adr-user">
+                    <p>Адрес доставки:</p>
+                    <input type="text">
+                </div>
+                <p>Время доставки:</p>
+                <input type="datetime-local">
+                <div>
+                    <div class="check-button">
+                        <p class="check-text">Как можно скорее</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="check-button">
+                        <p class="check-text">Посмотреть корзину</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 <!--Footer-->
 <footer>
     <a href=""><p>Правовая информация</p></a>

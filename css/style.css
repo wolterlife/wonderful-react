@@ -17,7 +17,8 @@
 
 .line-bef-menu-outside {
     display: flex;
-    justify-content: center;
+    width: 30%;
+    background-color: #00a0ff;
 }
 
 .line-bef-menu-inside {
@@ -26,16 +27,6 @@
     width: 30%;
     background-color: #00a0ff;
     border: 1px solid #00a0ff;
-}
-
-.line-bef-menu-left {
-    width: 35%;
-    background-color: #271E1E;
-}
-
-.line-bef-menu-right {
-    width: 35%;
-    background-color: #271E1E;
 }
 
 /* Header + logo */
@@ -80,7 +71,6 @@
 }
 
 .card-text {
-@import url('https://fonts.googleapis.com/css2?family=Ruda&display=swap');
     font-family: 'Ruda', sans-serif;
     color: #A7A7A7;
     margin: 0 0 5px 0;
@@ -123,7 +113,7 @@ a:hover .icon {
 .menu-main {
     list-style: none;
     margin: 3% 0;
-    padding-right: 80px;
+    padding-right: 70px;
 }
 
 .menu-li:first-child {
@@ -133,7 +123,7 @@ a:hover .icon {
 
 .menu-li {
     float: left;
-    margin-right: 50px;
+    margin-right: 65px;
 }
 
 .menu-li:nth-child(odd) {
@@ -202,37 +192,42 @@ a:hover .basket {
     transition: all 0.3s ease;
 }
 
-
-.upper {
+.upper-pizza {
+    font-family: 'Ruda', sans-serif;
     text-align: center;
     background-color: #271E1E;
     color: white;
     font-size: 4em;
     margin: 0;
 }
+
+.upper {
+    font-family: 'Ruda', sans-serif;
+    text-align: center;
+    background-color: #271E1E;
+    color: white;
+    font-size: 4em;
+    margin: 0;
+    padding: 0 30px;
+    border-top: 0;
+    border-bottom: 0;
+}
+
 /* List items */
+.all-d {
+    display: flex;
+    justify-content: center;
+    background: #271E1E;
+    padding: 20px 0 20px 0;
+
+}
+
 .all-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 80%;
-    background: #271E1E;
-}
-
-.all-d {
-    display: flex;
-    justify-content: center;
-}
-
-.all-left {
-    width: 10%;
-    background-color: #271E1E;
-}
-
-.all-right {
-    width: 10%;
-    background-color: #271E1E;
 }
 
 .item {
@@ -241,11 +236,13 @@ a:hover .basket {
     background-color: white;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     border: 0.3vw solid #ff6c00;
     /* mb border dotted*/
     border-radius: 10px;
-    width: 16%;
+    width: 20%;
+    height: 400px;
 }
 
 .item-img {
@@ -253,7 +250,15 @@ a:hover .basket {
 }
 
 .item-name {
+    font-family: 'Ruda', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
 
+.item-composition {
+    font-family: 'Ruda', sans-serif;
+    margin: 0;
+    text-align: center;
 }
 
 .item-section {
@@ -265,26 +270,138 @@ a:hover .basket {
 }
 
 .item-price {
-    /*border: 1px solid red;*/
+    font-family: 'Ruda', sans-serif;
+    font-weight: bold;
 }
 
 .item-plus {
+    margin-left: 8px;
     height: 20px;
     /*border: 1px solid #0033ff;*/
 
 }
 
-/* Delivery form */
+.smth-with-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #271E1E;
+}
 
-/* Footer */
-footer {
+/* Delivery form */
+.delivery-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #271E1E;
+}
+
+.delivery-div-form {
+    width: 60%;
+    height: 80vh;
+    margin: 20px;
+    background: white;
+    border-radius: 20px;
+}
+
+.delivery-container-img-text {
+    position: relative;
+}
+
+.delivery-person {
+    width: 100%;
+}
+
+.delivery-main-text {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    font-family: 'Ruda', sans-serif;
+    font-size: 7vh;
+    margin: 0;
+}
+
+.check-button {
+    display: inline-block;
+    border: 3px solid #00a0ff;
+}
+
+.check-text {
+    padding: 0px 8px;
+    font-size: 2vh;
+    font-family: 'Ruda', sans-serif;
+}
+
+form p {
+    font-family: 'Ruda', sans-serif;
+    margin: 10px;
+}
+
+.form-all {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.form-all-d {
+    display: flex;
+    justify-content: center;
+}
+input {
+    display: block;
+    border: 3px solid #ff6c00;
+    border-radius: 5px;
+}
+
+.adr-user {
+    max-width: 90%;
+    margin-top: 10px;
+}
+
+.text-user {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inp-user {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background: #A7A7A7;
+    padding: 3vh;
+}
+
+footer a {
+    text-decoration: none;
+    color: #271E1E;
 }
 
 footer p {
+    font-family: 'Ruda', sans-serif;
     margin: 0 0 0 0;
+    font-size: 1em;
+}
+
+/*MEDIA*/
+@media (max-width: 1000px) {
+    .item {
+        width: 45%;
+        height: 550px;
+    }
+}
+
+@media (max-width: 520px) {
+    .item {
+        width: 95%;
+        height: 500px;
+    }
 }
