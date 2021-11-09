@@ -383,45 +383,81 @@
 </div>
 
 <!--Delivery form-->
-<div class="delivery-div">
-    <div class="delivery-div-form">
-        <form>
-            <div class="delivery-container-img-text">
-                <img class="delivery-person" src="img/person-box.png" alt="">
-                <p class="delivery-main-text">Доставка</p>
-            </div>
-            <div class="form-all-d">
-            <div class="form-all">
-                <div class="name-user">
-                    <p>Имя</p>
-                    <input type="text">
-                </div>
-                <div class="lastname-user">
-                    <p>Фамилия</p>
-                    <input type="text">
-                </div>
-                <div class="adr-user">
-                    <p>Адрес доставки:</p>
-                    <input type="text">
-                </div>
-                <p>Время доставки:</p>
-                <input type="datetime-local">
-                <div>
-                    <div class="check-button">
-                        <p class="check-text">Как можно скорее</p>
+<!--<div class="delivery-div">-->
+<!--    <div class="delivery-div-form">-->
+<!--        <form>-->
+<!--            <div class="delivery-container-img-text">-->
+<!--                <img class="delivery-person" src="img/person-box.png" alt="">-->
+<!--            </div>-->
+<!--            <div class="form-all-d">-->
+<!--            <div class="form-all">-->
+<!--                <div class="name-user">-->
+<!--                    <p>Имя</p>-->
+<!--                    <input type="text">-->
+<!--                </div>-->
+<!--                <div class="lastname-user">-->
+<!--                    <p>Фамилия</p>-->
+<!--                    <input type="text">-->
+<!--                </div>-->
+<!--                <div class="adr-user">-->
+<!--                    <p>Адрес доставки:</p>-->
+<!--                    <input type="text">-->
+<!--                </div>-->
+<!--                <p>Время доставки:</p>-->
+<!--                <input type="datetime-local">-->
+<!--                <div>-->
+<!--                    <div class="check-button">-->
+<!--                        <p class="check-text">Как можно скорее</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <div class="check-button">-->
+<!--                        <p class="check-text">Посмотреть корзину</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="order-form">
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <form action="/action_page.php">
+
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Доставка до двери</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Полное имя</label>
+                        <input type="text" id="fname" name="firstname">
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input type="text" id="email" name="email">
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Адрес</label>
+                        <input type="text" id="adr" name="address">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="number">Номер телефона</label>
+                                <input type="text" id="number" name="number">
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-                <div>
-                    <div class="check-button">
-                        <p class="check-text">Посмотреть корзину</p>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </form>
+                <input type="submit" value="Бабах" class="btn">
+            </form>
+        </div>
+    </div>
+
+    <div class="col-25">
+        <div class="container">
+            <hr>
+            <p>Итого: <span class="price" style="color:black"><b>$30</b></span></p>
+        </div>
     </div>
 </div>
-
+</div>
 <!--Footer-->
 <footer>
     <a href=""><p>Правовая информация</p></a>
