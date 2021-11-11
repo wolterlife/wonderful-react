@@ -311,22 +311,7 @@ footer p {
     font-size: 1em;
 }
 
-/*MEDIA*/
-@media (max-width: 1000px) {
-    .item {
-        width: 45%;
-        height: 550px;
-    }
-}
 
-@media (max-width: 520px) {
-    .item {
-        width: 95%;
-        height: 500px;
-    }
-}
-
-/* */
 .order-form {
     font-family: 'Ruda', sans-serif;
     display: flex;
@@ -381,6 +366,10 @@ input[type=text] {
     border-radius: 3px;
 }
 
+.deliver-text {
+    color: white;
+}
+
 label {
     margin-bottom: 10px;
     display: block;
@@ -393,7 +382,9 @@ label {
     font-size: 24px;
 }
 
-
+.total-text {
+    color: white;
+}
 
 .btn {
     background-color: #ff7500;
@@ -416,60 +407,47 @@ span.price {
     color: grey;
 }
 
-/* Button neon */
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+/*480 - phones, 768 - tablet, 1024 - laptop, 1200 - tv*/
+
+
+/*MEDIA*/
+@media (max-width: 1200px) {
+
 }
 
-.wrapper > div {
-    margin: 20px;
+@media (max-width: 1024px) {
+
 }
 
-.box {
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
+@media (max-width: 768px) {
+
 }
 
-.box .content {
-    margin: 20px;
-    padding: 0 20px;
-    border: 1px dashed transparent;
-    color: white;
-    font-size: 14px;
-    line-height: 1.3;
-    background: transparent;
+@media (max-width: 480px) {
+
 }
 
-.box.out .corners {
-    position: absolute;
-    width: 100%;
-    transition-duration: 0.3s;
-}
 
-.box.out .corners:before,
-.box.out .corners:after {
-    content: "";
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border-color: cyan;
-    border-style: solid;
-    transition-duration: 0.3s;
-    transform: translateZ(0);
-}
 
-/*************************************/
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-@media (max-width: 800px) {
-    .row {
-        flex-direction: column-reverse;
+@media (max-width: 1000px) {
+    .item {
+        width: 45%;
+        height: 550px;
     }
+}
+
+@media (max-width: 520px) {
+    .item {
+        width: 95%;
+        height: 500px;
+    }
+}
+
+/* */
+
+
+/*   */
+@media (max-width: 800px) {
     .col-25 {
         margin-bottom: 20px;
     }

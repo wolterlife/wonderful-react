@@ -8,3 +8,12 @@ function colorBack(param) {
     document.getElementById("img_" + param.toString()).style.borderBottom="3px solid #ff6c00";
     document.getElementById("img_" + param.toString()).style.color="#b4b4b4";
 }   // Function back color in visual choosing menu
+
+function checkPing() {
+    console.log("CHECK");
+    alert("CHECK");
+}
+
+// // // // Shopping basket
+
+// // // //
