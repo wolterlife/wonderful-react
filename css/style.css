@@ -178,7 +178,7 @@ a:hover .icon {
     border-radius: 50px;
 }
 
-.basket img {
+.basket input {
     padding: 0.3vh;
     height: 7vh;
     width: 7vh;
@@ -187,7 +187,7 @@ a:hover .icon {
 
 }
 
-a:hover .basket {
+.basket:hover {
     filter: invert(1);
     transition: all 0.3s ease;
 }
@@ -330,22 +330,18 @@ footer p {
     margin: 0 -16px;
 
 }
-
 .col-25 {
     -ms-flex: 25%; /* IE10 */
     flex: 25%;
 }
-
 .col-50 {
     -ms-flex: 50%; /* IE10 */
     flex: 50%;
 }
-
 .col-75 {
     -ms-flex: 75%; /* IE10 */
     flex: 75%;
 }
-
 .col-25,
 .col-50,
 .col-75 {
@@ -358,12 +354,17 @@ footer p {
     border-radius: 3px;
 }
 
-input[type=text] {
+.order-form input:nth-child(n + 2) {
     width: 98%;
     margin-bottom: 20px;
     padding: 12px;
     border: 1px solid #271E1E;
     border-radius: 3px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 .deliver-text {
@@ -389,17 +390,40 @@ label {
 .btn {
     background-color: #ff7500;
     color: #271E1E;
+    width: 40%;
     padding: 12px;
-    margin: 10px 0;
+    margin: 10px 0px;
     border: none;
-    width: 100%;
     border-radius: 3px;
     cursor: pointer;
     font-size: 17px;
 }
 
+.btn:nth-child(2) {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ff6a00, 0 0 80px #ff0000, 0 0 90px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000;
+}
+
 .btn:hover {
     background-color: #00a0ff;
+}
+
+.btn:nth-child(1):hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #00b2ff, 0 0 80px #ff0000, 0 0 90px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000;
+}
+
+.trash-button-d {
+    display: flex;
+    align-items: center;
+}
+
+
+.trash-button {
+    padding:3px;
+    background: #ff6c00;
+    border-radius: 500px;
+    width: 5vh;
 }
 
 span.price {
