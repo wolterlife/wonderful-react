@@ -274,6 +274,12 @@ a:hover .icon {
     font-weight: bold;
 }
 
+.item-price-cur {
+    font-family: 'Ruda', sans-serif;
+    font-weight: bold;
+    padding-left: 4px;
+}
+
 .item-plus {
     margin-left: 8px;
     height: 20px;

@@ -26,18 +26,18 @@ let d = document,
     price.innerHTML = JSON.parse( localStorage.getItem('cart')).total + ' руб.'; // set total when page loaded
 
 function getCartData() {
-    console.info("Local store loaded")
+    console.log("Local store loaded")
     return JSON.parse(localStorage.getItem('cart'));
 }
 
 function setCartData(o) {
-    console.info("Local store write")
+    console.log("Local store write")
     localStorage.setItem('cart', JSON.stringify(o));
     return false;
 }
 
 function addToCart(e) {
-    console.info("Add to cart function")
+    console.log("Add to cart function")
     let cartData = getCartData() || {total: 0}, // get data and create obj if cart is empty
         parentBox = e.parentNode.parentNode, // parent button "+"
         itemId = e.getAttribute('data-id'), // info about pizza
@@ -59,8 +59,8 @@ function addToCart(e) {
     return false;
 }
 
-function openCart(e) {
-    console.info("Open cart")
+function openCart() {
+    console.log("Open cart")
     let cartData = getCartData(),
         totalItems = '';
     console.log(JSON.stringify(cartData));
@@ -82,15 +82,9 @@ function openCart(e) {
     return false;
 }
 
-function clearCart(e) {
+function clearCart() {
     localStorage.removeItem('cart');
     price.innerHTML = '0 руб.';
     console.log("clear");
 }
 
-
-/*
-1. Total price.
-2. Modal window (order)
-3. Modal window (auth)
- */

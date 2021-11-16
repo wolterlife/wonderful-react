@@ -64,15 +64,15 @@
 <!--Visual choosing item-->
 <div class="choose">
     <a href="#pizza"><img class="choose-img" id="m_1" onmouseover="colorChange(1)" onmouseout="colorBack(1)"
-                    src="img/neon_choose/pitstsa.png" alt=""></a>
+                    src="img/neon_choose/pizza.png" alt=""></a>
     <a href="#drinks"><img class="choose-img" id="m_2" onmouseover="colorChange(2)" onmouseout="colorBack(2)"
-                    src="img/neon_choose/napitki.png" alt=""></a>
+                    src="img/neon_choose/drinks.png" alt=""></a>
     <a href="#desserts"><img class="choose-img" id="m_3" onmouseover="colorChange(3)" onmouseout="colorBack(3)"
-                    src="img/neon_choose/deserty.png" alt=""></a>
+                    src="img/neon_choose/desserts.png" alt=""></a>
     <a href="#snacks"><img class="choose-img" id="m_4" onmouseover="colorChange(4)" onmouseout="colorBack(4)"
-                    src="img/neon_choose/zakuska.png" alt=""></a>
+                    src="img/neon_choose/snacks.png" alt=""></a>
     <a href=""><img class="choose-img" id="m_5" onmouseover="colorChange(5)" onmouseout="colorBack(5)"
-                    src="img/neon_choose/kupony.png" alt=""></a>
+                    src="img/neon_choose/gift.png" alt=""></a>
 </div>
 
 <!--Basket-->
@@ -95,6 +95,7 @@
             <p class="item-composition">Томатный соус, пикантная пепперони, моцарелла уцу цу цу цуцуц уц уц уцуц</p>
             <div class="item-section">
                 <p class="item-price">210</p>
+                <p class="item-price-cur">руб.</p>
                 <input data-id="1" type="image" class="item-plus" src="img/plus.svg" onclick="addToCart(this)" alt=""/>
             </div>
         </div>
@@ -403,9 +404,9 @@
                 </div>
                 <div class="form-buttons">
                     <button class="btn" id="button-fast-time" onclick="fastTime()">Ближайшее время</button>
-                    <button id="checkout" class="btn" onclick="openCart(this)">Оформить заказ</button>
+                    <button id="checkout" class="btn" onclick="openCart()">Оформить заказ</button>
                     <div class="trash-button-d">
-                        <input class="trash-button" type="image" src="img/delete.svg" alt="" onclick="clearCart(this)">
+                        <input class="trash-button" type="image" src="img/delete.svg" alt="" onclick="clearCart()">
                     </div>
                 </div>
                 <p class="total-text">Итого: <span class="price" style="color:#ffffff"><b id="price">0 руб.</b></span></p>
@@ -421,7 +422,6 @@
     </div>
 </div>
 
-<button id="clear-cart" onclick="clearCart(this)">Очистить корзину</button>
 <!--Footer-->
 <footer>
     <a href=""><p>Правовая информация</p></a>
