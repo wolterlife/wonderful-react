@@ -20,10 +20,19 @@ function fastTime() {
     }
 }         // change color fast time button
 
+
 let d = document,
     itemBox = d.querySelectorAll('.item'), // div for items
-    price = d.getElementById('price');    // total price block
-    price.innerHTML = JSON.parse( localStorage.getItem('cart')).total + ' руб.'; // set total when page loaded
+    price = d.getElementById('price');   // total price block
+    cartView = d.getElementsByClassName('cart-view')[0];
+    if (localStorage.getItem('cart')) { // set total when page loaded. if null - ignore
+        totalJson = JSON.parse( localStorage.getItem('cart')).total;
+        price.innerHTML = totalJson + ' руб.';
+    }
+console.log(cartView);
+function closePop() {
+    d.getElementsByClassName('b-popup')[0].style.visibility="hidden";
+}
 
 function getCartData() {
     console.log("Local store loaded")
@@ -50,7 +59,7 @@ function addToCart(e) {
     //
 
     console.log(itemId, itemTitle, itemPrice + " - added to cart");
-    if (cartData.hasOwnProperty(itemId)) { // if in cart add +1 to value
+    if (cartData.hasOwnProperty(itemId)) { // if item in cart add +1 to value
         cartData[itemId][2] += 1;
     } else { // if this item don't in cart
         cartData[itemId] = [itemTitle, itemPrice, 1];
@@ -62,22 +71,27 @@ function addToCart(e) {
 function openCart() {
     console.log("Open cart")
     let cartData = getCartData(),
-        totalItems = '';
-    console.log(JSON.stringify(cartData));
+        finalCartList = '';
+    // show pop
+    d.getElementsByClassName('b-popup')[0].style.visibility="visible";
+    if (cartData) d.getElementById('price-pop').innerHTML = cartData.total+' руб.';
+    //
     // if smth in cart form list
-    if (cartData !== null) {
-        totalItems = '<table class="shopping_list"><tr><th>Заказ</th><th>Цена</th><th>Кол-во</th></tr>';
+    if (cartData) {
+        finalCartList = '<table class="shopping_list"><tr><th>Заказ</th><th>Цена</th><th>Кол-во</th><th></th></tr>';
         for (let items in cartData) { // form table with result
-            totalItems += '<tr>';
+            finalCartList += '<tr>';
             for (let i = 0; i < cartData[items].length; i++) {
-                totalItems += '<td>' + cartData[items][i] + '</td>';
+                finalCartList += '<td>' + cartData[items][i] + '</td>';
             }
-            totalItems += '</tr>';
+            finalCartList += '<td>' + '-' + '</td>';
+            finalCartList += '</tr>';
         }
-        totalItems += '</table>';
-        // price.innerHTML = totalItems; // Change to popUp view
+        finalCartList += '</table>';
+
+         cartView.innerHTML = finalCartList; // Change to popUp view
     } else {
-        price.innerHTML = 'Не выбран ни один пункт меню :(';
+        cartView.innerHTML = 'Не выбран ни один из пунктов меню :(';
     }
     return false;
 }
@@ -85,6 +99,8 @@ function openCart() {
 function clearCart() {
     localStorage.removeItem('cart');
     price.innerHTML = '0 руб.';
+    cartView.innerHTML = '';
+    d.getElementById('price-pop').innerHTML = '0 руб.';
     console.log("clear");
 }
 

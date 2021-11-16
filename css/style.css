@@ -424,7 +424,6 @@ label {
     align-items: center;
 }
 
-
 .trash-button {
     padding:3px;
     background: #ff6c00;
@@ -437,8 +436,64 @@ span.price {
     color: grey;
 }
 
+/*PopUp*/
+.b-popup{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    /*visibility: hidden;*/
+    top:0px;
+}
+.b-popup .b-popup-content{
+    margin:40px auto 0px auto;
+    width:auto;
+    height: auto;
+    max-width: 50%;
+    padding:10px;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.cart-view {
+    font-family: 'Ruda', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-cross {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shopping_list {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+.shopping_list td,
+.shopping_list th {
+    font-family: 'Ruda', sans-serif;
+    padding: 10px;
+    border: 1px solid #AAAAAA;
+}
 /*480 - phones, 768 - tablet, 1024 - laptop, 1200 - tv*/
 
+.total-pop {
+    font-family: 'Ruda', sans-serif;
+    color: #271E1E;
+}
+
+#price-pop {
+    font-family: 'Ruda', sans-serif;
+    color: #271E1E;
+}
 
 /*MEDIA*/
 @media (max-width: 1200px) {
