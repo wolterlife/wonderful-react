@@ -11,12 +11,11 @@ function colorBack(param) {
 function fastTime() {
     if (document.getElementById('time').disabled === true) {
         document.getElementById('time').disabled = false;
-        document.getElementById('button-fast-time').style.backgroundColor="#ff7500"
+        document.getElementById('button-fast-time').style.backgroundColor = "#ff7500"
 
-    }
-    else {
+    } else {
         document.getElementById('time').disabled = true;
-        document.getElementById('button-fast-time').style.backgroundColor="#00a0ff"
+        document.getElementById('button-fast-time').style.backgroundColor = "#00a0ff"
     }
 }         // change color fast time button
 
@@ -24,14 +23,22 @@ function fastTime() {
 let d = document,
     itemBox = d.querySelectorAll('.item'), // div for items
     price = d.getElementById('price');   // total price block
-    cartView = d.getElementsByClassName('cart-view')[0];
-    if (localStorage.getItem('cart')) { // set total when page loaded. if null - ignore
-        totalJson = JSON.parse( localStorage.getItem('cart')).total;
-        price.innerHTML = totalJson + ' руб.';
+cartView = d.getElementsByClassName('cart-view')[0];
+if (localStorage.getItem('cart')) { // set total when page loaded. if null - ignore
+    totalJson = JSON.parse(localStorage.getItem('cart')).total;
+    price.innerHTML = totalJson + ' руб.';
+}
+
+function cartDec(e) {
+    let namePizza = e.parentNode.parentNode.querySelector('td');
+    let cartData = getCartData(); // get data and create obj if cart is empty
+    for (let key in cartData) {
+        console.log(cartData[key][0]);
     }
-console.log(cartView);
+}
+
 function closePop() {
-    d.getElementsByClassName('b-popup')[0].style.visibility="hidden";
+    d.getElementsByClassName('b-popup')[0].style.visibility = "hidden";
 }
 
 function getCartData() {
@@ -73,23 +80,25 @@ function openCart() {
     let cartData = getCartData(),
         finalCartList = '';
     // show pop
-    d.getElementsByClassName('b-popup')[0].style.visibility="visible";
-    if (cartData) d.getElementById('price-pop').innerHTML = cartData.total+' руб.';
+    d.getElementsByClassName('b-popup')[0].style.visibility = "visible";
+    if (cartData) d.getElementById('price-pop').innerHTML = cartData.total + ' руб.';
     //
     // if smth in cart form list
     if (cartData) {
         finalCartList = '<table class="shopping_list"><tr><th>Заказ</th><th>Цена</th><th>Кол-во</th><th></th></tr>';
         for (let items in cartData) { // form table with result
-            finalCartList += '<tr>';
-            for (let i = 0; i < cartData[items].length; i++) {
-                finalCartList += '<td>' + cartData[items][i] + '</td>';
+            if (items !== 'total') { // When we have end of the table items = total
+                finalCartList += '<tr>';
+                for (let i = 0; i < cartData[items].length; i++) {
+                    finalCartList += '<td>' + cartData[items][i] + '</td>';
+                }
+                finalCartList += '<td>' + '<img src="img/minus-box-outline.svg" alt="" onclick="cartDec(this)"/>' + '</td>';
+                finalCartList += '</tr>';
             }
-            finalCartList += '<td>' + '-' + '</td>';
-            finalCartList += '</tr>';
         }
         finalCartList += '</table>';
 
-         cartView.innerHTML = finalCartList; // Change to popUp view
+        cartView.innerHTML = finalCartList; // Change to popUp view
     } else {
         cartView.innerHTML = 'Не выбран ни один из пунктов меню :(';
     }

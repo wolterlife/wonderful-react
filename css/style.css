@@ -341,6 +341,7 @@ footer p {
     flex: 25%;
 }
 .col-50 {
+
     -ms-flex: 50%; /* IE10 */
     flex: 50%;
 }
@@ -373,8 +374,16 @@ footer p {
     justify-content: space-between;
 }
 
+.deliver-box {
+
+    display: flex;
+    font-size: 3vh;
+    justify-content: center;
+}
+
 .deliver-text {
-    color: white;
+    color: #ff6c00;
+    font-weight: bold;
 }
 
 label {

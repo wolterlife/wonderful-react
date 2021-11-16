@@ -52,11 +52,13 @@
         <li class="menu-li"><a href="">e</a></li>
         <li class="menu-li" onmouseover="colorChange(1)" onmouseout="colorBack(1)"><a id="img_1" href="#pizza">Пицца</a>
         </li>
-        <li class="menu-li" onmouseover="colorChange(2)" onmouseout="colorBack(2)"><a id="img_2" href="#drinks">Напитки</a>
+        <li class="menu-li" onmouseover="colorChange(2)" onmouseout="colorBack(2)"><a id="img_2"
+                                                                                      href="#drinks">Напитки</a>
         </li>
         <li class="menu-li" onmouseover="colorChange(3)" onmouseout="colorBack(3)"><a id="img_3" href="#desserts">Десерты</a>
         </li>
-        <li class="menu-li" onmouseover="colorChange(4)" onmouseout="colorBack(4)"><a id="img_4" href="#snacks">Закуски</a>
+        <li class="menu-li" onmouseover="colorChange(4)" onmouseout="colorBack(4)"><a id="img_4"
+                                                                                      href="#snacks">Закуски</a>
         </li>
         <li class="menu-li" onmouseover="colorChange(5)" onmouseout="colorBack(5)"><a id="img_5" href="">Купоны</a></li>
     </ul>
@@ -64,13 +66,13 @@
 <!--Visual choosing item-->
 <div class="choose">
     <a href="#pizza"><img class="choose-img" id="m_1" onmouseover="colorChange(1)" onmouseout="colorBack(1)"
-                    src="img/neon_choose/pizza.png" alt=""></a>
+                          src="img/neon_choose/pizza.png" alt=""></a>
     <a href="#drinks"><img class="choose-img" id="m_2" onmouseover="colorChange(2)" onmouseout="colorBack(2)"
-                    src="img/neon_choose/drinks.png" alt=""></a>
+                           src="img/neon_choose/drinks.png" alt=""></a>
     <a href="#desserts"><img class="choose-img" id="m_3" onmouseover="colorChange(3)" onmouseout="colorBack(3)"
-                    src="img/neon_choose/desserts.png" alt=""></a>
+                             src="img/neon_choose/desserts.png" alt=""></a>
     <a href="#snacks"><img class="choose-img" id="m_4" onmouseover="colorChange(4)" onmouseout="colorBack(4)"
-                    src="img/neon_choose/snacks.png" alt=""></a>
+                           src="img/neon_choose/snacks.png" alt=""></a>
     <a href=""><img class="choose-img" id="m_5" onmouseover="colorChange(5)" onmouseout="colorBack(5)"
                     src="img/neon_choose/gift.png" alt=""></a>
 </div>
@@ -379,7 +381,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-50">
-                        <p class="deliver-text">Доставка до двери</p>
+                        <div class="deliver-box">
+                            <p class="deliver-text">Доставка до двери</p>
+                        </div>
                         <label for="fname"><i class="fa fa-user"></i> Полное имя</label>
                         <input type="text" id="fname" name="firstname">
                         <label for="email"><i class="fa fa-envelope"></i> Email</label>
@@ -409,7 +413,8 @@
                         <input class="trash-button" type="image" src="img/delete.svg" alt="" onclick="clearCart()">
                     </div>
                 </div>
-                <p class="total-text">Итого: <span class="price" style="color:#ffffff"><b id="price">0 руб.</b></span></p>
+                <p class="total-text">Итого: <span class="price" style="color:#ffffff"><b id="price">0 руб.</b></span>
+                </p>
 
             </div>
         </div>
@@ -426,11 +431,12 @@
 <div class="b-popup">
     <div class="b-popup-content">
         <div class="right-cross">
-        <a class="p-cross"><img src="img/close-circle.svg" alt="" class="p-crossImg" onclick="closePop()"></a>
+            <a class="p-cross"><img src="img/close-circle.svg" alt="" class="p-crossImg" onclick="closePop()"></a>
         </div>
-    <div class="cart-view"></div>
-<hr>
-        <p class="total-text total-pop">Итого: <span class="price" style="color:#ffffff"><b id="price-pop">0 руб.</b></span></p>
+        <div class="cart-view"></div>
+        <hr>
+        <p class="total-text total-pop">Итого: <span class="price" style="color:#ffffff"><b
+                id="price-pop">0 руб.</b></span></p>
 
     </div>
 </div>
