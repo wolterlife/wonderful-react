@@ -37,10 +37,6 @@ function cartDec(e) {
     }
 }
 
-function closePop() {
-    d.getElementsByClassName('b-popup')[0].style.visibility = "hidden";
-}
-
 function getCartData() {
     console.log("Local store loaded")
     return JSON.parse(localStorage.getItem('cart'));
@@ -75,7 +71,7 @@ function addToCart(e) {
     return false;
 }
 
-function openCart() {
+function openCart(showBaskset) {
     console.log("Open cart")
     let cartData = getCartData(),
         finalCartList = '';
@@ -98,11 +94,18 @@ function openCart() {
         }
         finalCartList += '</table>';
 
-        cartView.innerHTML = finalCartList; // Change to popUp view
+        cartView.innerHTML = finalCartList;
+        if (showBaskset) {
+
+        }
     } else {
         cartView.innerHTML = 'Не выбран ни один из пунктов меню :(';
     }
     return false;
+}
+
+function closePop() {
+    d.getElementsByClassName('b-popup')[0].style.visibility = "hidden";
 }
 
 function clearCart() {

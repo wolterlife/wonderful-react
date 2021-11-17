@@ -469,6 +469,20 @@ span.price {
     box-shadow: 0px 0px 10px #000;
 }
 
+.buttons-pop {
+}
+
+.btn-in-pop {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Ruda', sans-serif;
+
+}
+
+.btn-in-pop button {
+    width: 20%;
+}
+
 .cart-view {
     font-family: 'Ruda', sans-serif;
     display: flex;

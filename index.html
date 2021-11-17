@@ -79,7 +79,7 @@
 
 <!--Basket-->
 <div class="basket">
-    <input type="image" src="img/cart-mob.svg" alt="" onclick="openCart(this)">
+    <input type="image" src="img/cart-mob.svg" alt="" onclick="openCart(false)">
 </div>
 <!--Items in menu-->
 <a id="pizza"></a>
@@ -408,7 +408,7 @@
                 </div>
                 <div class="form-buttons">
                     <button class="btn" id="button-fast-time" onclick="fastTime()">Ближайшее время</button>
-                    <button id="checkout" class="btn" onclick="openCart()">Оформить заказ</button>
+                    <button id="checkout" class="btn" onclick="openCart(true)">Оформить заказ</button>
                     <div class="trash-button-d">
                         <input class="trash-button" type="image" src="img/delete.svg" alt="" onclick="clearCart()">
                     </div>
@@ -437,7 +437,9 @@
         <hr>
         <p class="total-text total-pop">Итого: <span class="price" style="color:#ffffff"><b
                 id="price-pop">0 руб.</b></span></p>
-
+        <div class="buttons-pop">
+       <div class="btn-in-pop"><button class="btn" onclick="openCart(true)">Подтвердить</button></div>
+        </div>
     </div>
 </div>
 
