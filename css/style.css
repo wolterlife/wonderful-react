@@ -336,19 +336,23 @@ footer p {
     margin: 0 -16px;
 
 }
+
 .col-25 {
     -ms-flex: 25%; /* IE10 */
     flex: 25%;
 }
+
 .col-50 {
 
     -ms-flex: 50%; /* IE10 */
     flex: 50%;
 }
+
 .col-75 {
     -ms-flex: 75%; /* IE10 */
     flex: 75%;
 }
+
 .col-25,
 .col-50,
 .col-75 {
@@ -434,7 +438,7 @@ label {
 }
 
 .trash-button {
-    padding:3px;
+    padding: 3px;
     background: #ff6c00;
     border-radius: 500px;
     width: 5vh;
@@ -446,26 +450,27 @@ span.price {
 }
 
 /*PopUp*/
-.b-popup{
+.b-popup {
     /*display: flex;*/
     /*justify-content: center;*/
     /*align-items: center;*/
-    width:100%;
+    width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    overflow:hidden;
-    position:fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
     /*visibility: hidden;*/
-    top:0px;
+    top: 0px;
 }
-.b-popup .b-popup-content{
-    margin:40px auto 0px auto;
-    width:auto;
+
+.b-popup .b-popup-content {
+    margin: 40px auto 0px auto;
+    width: auto;
     height: auto;
     max-width: 50%;
-    padding:10px;
+    padding: 10px;
     background-color: #c5c5c5;
-    border-radius:5px;
+    border-radius: 5px;
     box-shadow: 0px 0px 10px #000;
 }
 
@@ -500,12 +505,14 @@ span.price {
     margin-top: 10px;
     border-collapse: collapse;
 }
+
 .shopping_list td,
 .shopping_list th {
     font-family: 'Ruda', sans-serif;
     padding: 10px;
     border: 1px solid #AAAAAA;
 }
+
 /*480 - phones, 768 - tablet, 1024 - laptop, 1200 - tv*/
 
 .total-pop {
@@ -534,7 +541,6 @@ span.price {
 @media (max-width: 480px) {
 
 }
-
 
 
 @media (max-width: 1000px) {
