@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+$back: #282c34; // test scss
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: $back;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
