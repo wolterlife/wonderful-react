@@ -9,7 +9,7 @@ export default () => {
 
   return (
     <div
-      className="App"
+      className="slider"
       style={{
         background: '#A7A7A7',
       }}
@@ -33,8 +33,6 @@ export default () => {
         <img alt="" className="slide-unit" src="img/slider-photo/slider2.png" />
         <img alt="" className="slide-unit" src="img/slider-photo/slider3.png" />
       </Glide>
-      <hr className="line-second" />
-      <hr className="line-first" />
     </div>
   );
 };

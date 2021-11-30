@@ -3,17 +3,6 @@
 }
 
 /* Lines */
-.line-first {
-  margin: 0;
-  background-color: #ff6c00;
-  border: 1px solid #ff6c00;
-}
-
-.line-second {
-  margin: 0;
-  background-color: #ffffff;
-  border: 1px solid #ffffff;
-}
 
 .line-bef-menu-outside {
   display: flex;
@@ -30,7 +19,7 @@
 }
 
 /* Header + logo */
-.div-header {
+.header__container {
   position: relative;
   display: flex;
   background: #271E1E;
@@ -42,7 +31,7 @@
   width: 100%;
 }
 
-.logo {
+.header__logo {
   margin-left: 6%;
   width: 950px;
   height: 200px;
@@ -50,7 +39,7 @@
 }
 
 /* Cards */
-.button-card {
+.sign-in-link__wrapper {
   position: absolute;
   right: 2%;
   top: 32%;
@@ -65,12 +54,12 @@
   align-items: center;
 }
 
-.icon {
+.sign-in-link__icon {
   width: 38px;
   padding: 0px 0px 5px 0px
 }
 
-.card-text {
+.sign-in-link__title {
   font-family: 'Ruda', sans-serif;
   color: #A7A7A7;
   margin: 0 0 5px 0;
@@ -78,23 +67,39 @@
   font-weight: bold;
 }
 
-a:hover .button-card {
+a:hover .sign-in-link__wrapper {
   border: 2px solid #ffffff;
 
 }
 
-a:hover .card-text {
+a:hover .sign-in-link__title {
   color: #ffffff;
 
 }
 
-a:hover .icon {
+a:hover .sign-in-link__icon {
   filter: brightness(0) invert(1);
 }
 
 /* Slider*/
 .slider {
   background: #A7A7A7;
+
+  &::before {
+    display: block;
+    height: 2px;
+    content: '';
+    background-color: #ffffff;
+    border-bottom: 2px solid #ff6c00;
+  }
+
+  &::after {
+    display: block;
+    height: 2px;
+    content: '';
+    background-color: #ff6c00;
+    border-bottom: 2px solid #ffffff;
+  }
 }
 
 .slide-unit {
@@ -102,35 +107,37 @@ a:hover .icon {
   width: 100%;
 }
 
+
+
 /* Menu styles */
-.menu-d {
+.navigation-menu__container {
   display: flex;
   justify-content: center;
   width: 100%;
   background: #271E1E;
 }
 
-.menu-main {
+.navigation-menu__list {
   list-style: none;
   margin: 3% 0;
   padding-right: 70px;
 }
 
-.menu-li:first-child {
+.navigation-menu__item:first-child {
   font-size: 32px;
   visibility: hidden;
 }
 
-.menu-li {
+.navigation-menu__item {
   float: left;
   margin-right: 65px;
 }
 
-.menu-li:nth-child(odd) {
+.navigation-menu__item:nth-child(odd) {
   margin-top: 50px;
 }
 
-.menu-li a {
+.navigation-menu__item a {
   @import url('https://fonts.googleapis.com/css2?family=Ruda&display=swap');
   font-family: 'Ruda', sans-serif;
   color: #b4b4b4;
@@ -141,7 +148,7 @@ a:hover .icon {
   transition: all 0.2s ease-in-out;
 }
 
-.menu-li a:hover {
+.navigation-menu__item a:hover {
   border-bottom: 3px solid #00a0ff;
   color: #ffffff;
 

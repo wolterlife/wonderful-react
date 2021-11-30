@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.scss';
-import GlideSlideBar from './components/GlideSlideBar/GlideSlideBar';
+import Slider from './components/GlideSlideBar/GlideSlideBar';
 import Header from './components/Header';
-import ChooseMenu from './components/ChooseMenu';
+import NavigationMenu from './components/NavigationMenu';
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <Header />
-        <GlideSlideBar />
-        <ChooseMenu />
+        <Slider />
+        <NavigationMenu />
       </div>
     );
   }

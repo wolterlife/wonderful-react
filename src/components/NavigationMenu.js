@@ -1,37 +1,57 @@
 import React from 'react';
 
-const ChooseMenu = () => {
+const NavigationMenu = () => {
   return (
-    <div>
-      <hr className="line-second" />
-      <hr className="line-first" />
-      <div className="menu-d">
-        <ul className="menu-main">
-          <li className="menu-li">
-            <a href="">e</a>
+    <nav>
+      <div className="navigation-menu__container">
+        <ul className="navigation-menu__list">
+          <li className="navigation-menu__item">
+            <a href="" className="navigation-menu__link">
+              e
+            </a>
           </li>
-          <li className="menu-li" onBlur={() => colorBack(1)} onFocus={() => colorChange(1)}>
-            <a href="#pizza" id="img_1">
+          <li
+            className="navigation-menu__item"
+            onBlur={() => colorBack(1)}
+            onFocus={() => colorChange(1)}
+          >
+            <a href="#pizza" className="navigation-menu__link">
               Пицца
             </a>
           </li>
-          <li className="menu-li" onBlur={() => colorBack(2)} onFocus={() => colorChange(2)}>
-            <a href="#drinks" id="img_2">
+          <li
+            className="navigation-menu__item"
+            onBlur={() => colorBack(2)}
+            onFocus={() => colorChange(2)}
+          >
+            <a href="#drinks" className="navigation-menu__link">
               Напитки
             </a>
           </li>
-          <li className="menu-li" onBlur={() => colorBack(3)} onFocus={() => colorChange(3)}>
-            <a href="#desserts" id="img_3">
+          <li
+            className="navigation-menu__item"
+            onBlur={() => colorBack(3)}
+            onFocus={() => colorChange(3)}
+          >
+            <a href="#desserts" className="navigation-menu__link">
               Десерты
             </a>
           </li>
-          <li className="menu-li" onBlur={() => colorBack(4)} onFocus={() => colorChange(4)}>
-            <a href="#snacks" id="img_4">
+          <li
+            className="navigation-menu__item"
+            onBlur={() => colorBack(4)}
+            onFocus={() => colorChange(4)}
+          >
+            <a href="#snacks" className="navigation-menu__link">
               Закуски
             </a>
           </li>
-          <li className="menu-li" onBlur={() => colorBack(5)} onFocus={() => colorChange(5)}>
-            <a href="" id="img_5">
+          <li
+            className="navigation-menu__item"
+            onBlur={() => colorBack(5)}
+            onFocus={() => colorChange(5)}
+          >
+            <a href="" className="navigation-menu__link">
               Купоны
             </a>
           </li>
@@ -40,7 +60,7 @@ const ChooseMenu = () => {
       <div className="choose">
         <a href="#pizza">
           <img
-            alt=""
+            alt="Пицца"
             className="choose-img"
             id="m_1"
             onBlur={() => colorBack(1)}
@@ -50,7 +70,7 @@ const ChooseMenu = () => {
         </a>
         <a href="#drinks">
           <img
-            alt=""
+            alt="Напитки"
             className="choose-img"
             id="m_2"
             onBlur={() => colorBack(2)}
@@ -60,7 +80,7 @@ const ChooseMenu = () => {
         </a>
         <a href="#desserts">
           <img
-            alt=""
+            alt="Десерты"
             className="choose-img"
             id="m_3"
             onBlur={() => colorBack(3)}
@@ -70,7 +90,7 @@ const ChooseMenu = () => {
         </a>
         <a href="#snacks">
           <img
-            alt=""
+            alt="Закуски"
             className="choose-img"
             id="m_4"
             onBlur={() => colorBack(4)}
@@ -89,7 +109,7 @@ const ChooseMenu = () => {
           />
         </a>
       </div>
-    </div>
+    </nav>
   );
 };
 
@@ -108,4 +128,4 @@ function colorBack(param) {
   // document.getElementById(`img_${param.toString()}`).style.color = '#b4b4b4';
 } // back color in visual choosing menu
 
-export default ChooseMenu;
+export default NavigationMenu;

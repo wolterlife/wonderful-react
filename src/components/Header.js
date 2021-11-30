@@ -2,19 +2,17 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div>
-      <div className="div-header">
-        <img alt="" className="logo" src="img/logo-pizza.png" />
-        <a href="">
-          <div className="button-card">
-            <img alt="" className="icon" src="img/login.png" />
-            <p className="card-text">Вход</p>
+    <header>
+      <div className="header__container">
+        <img alt="" className="header__logo" src="img/logo-pizza.png" />
+        <a href="" className="header__sign-in-link sign-in-link">
+          <div className="sign-in-link__wrapper">
+            <img alt="" className="sign-in-link__icon" src="img/login.png" />
+            <p className="sign-in-link__title">Вход</p>
           </div>
         </a>
       </div>
-      <hr className="line-first" />
-      <hr className="line-second" />
-    </div>
+    </header>
   );
 };
 
