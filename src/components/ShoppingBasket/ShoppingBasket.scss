@@ -1,0 +1,23 @@
+.shopping-basket {
+  display: flex;
+  position: fixed;
+  z-index: 99999999;
+  bottom: 10vh;
+  right: 3vw;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.shopping-basket input {
+  padding: 0.3vh;
+  height: 7vh;
+  width: 7vh;
+  background-color: #ff7500;
+  border-radius: 50vw;
+}
+
+.shopping-basket:hover {
+  filter: invert(1);
+  transition: all 0.3s ease;
+}

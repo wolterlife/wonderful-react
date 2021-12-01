@@ -1,0 +1,18 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #A7A7A7;
+  padding: 3vh;
+}
+
+footer a {
+  text-decoration: none;
+  color: #271E1E;
+}
+
+footer p {
+  font-family: 'Ruda', sans-serif;
+  margin: 0 0 0 0;
+  font-size: 1em;
+}

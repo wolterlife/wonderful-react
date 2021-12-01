@@ -1,3 +1,28 @@
 .Glide-leftArrow, .Glide-rightArrow {
   display: none;
 }
+
+.slider {
+  background: #A7A7A7;
+
+  &::before {
+    display: block;
+    height: 2px;
+    content: '';
+    background-color: #ffffff;
+    border-bottom: 2px solid #ff6c00;
+  }
+
+  &::after {
+    display: block;
+    height: 2px;
+    content: '';
+    background-color: #ff6c00;
+    border-bottom: 2px solid #ffffff;
+  }
+}
+
+.slide-unit {
+  height: 300px;
+  width: 100%;
+}
