@@ -63,7 +63,6 @@ const NavigationMenu = () => {
           <img
             alt="Пицца"
             className="choose-img"
-            id="m_1"
             onBlur={() => colorBack(1)}
             onFocus={() => colorChange(1)}
             src="img/neon-choose/pizza.png"
@@ -73,7 +72,6 @@ const NavigationMenu = () => {
           <img
             alt="Напитки"
             className="choose-img"
-            id="m_2"
             onBlur={() => colorBack(2)}
             onFocus={() => colorChange(2)}
             src="img/neon-choose/drinks.png"
@@ -83,7 +81,6 @@ const NavigationMenu = () => {
           <img
             alt="Десерты"
             className="choose-img"
-            id="m_3"
             onBlur={() => colorBack(3)}
             onFocus={() => colorChange(3)}
             src="img/neon-choose/desserts.png"
@@ -93,7 +90,6 @@ const NavigationMenu = () => {
           <img
             alt="Закуски"
             className="choose-img"
-            id="m_4"
             onBlur={() => colorBack(4)}
             onFocus={() => colorChange(4)}
             src="img/neon-choose/snacks.png"
@@ -103,7 +99,6 @@ const NavigationMenu = () => {
           <img
             alt=""
             className="choose-img"
-            id="m_5"
             onBlur={() => colorBack(5)}
             onFocus={() => colorChange(5)}
             src="img/neon-choose/gift.png"

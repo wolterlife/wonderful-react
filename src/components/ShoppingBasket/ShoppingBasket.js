@@ -5,7 +5,7 @@ const ShoppingBasket = () => {
   return (
     <div className="shopping-basket">
       <input
-        alt="Посмотреть корзину"
+        alt="Просмотреть корзину"
         onClick="openCart(false)"
         src="img/icons/cart-mob.svg"
         type="image"
