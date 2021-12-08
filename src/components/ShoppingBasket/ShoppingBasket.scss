@@ -1,7 +1,8 @@
-.shopping-basket {
+.shopping-basket-container {
   display: flex;
+  flex-direction: column;
   position: fixed;
-  z-index: 99999999;
+  z-index: 3;
   bottom: 10vh;
   right: 3vw;
   justify-content: space-around;
@@ -9,15 +10,29 @@
   border-radius: 50px;
 }
 
-.shopping-basket input {
+.shopping-basket__button {
   padding: 0.3vh;
+  z-index: 5;
   height: 7vh;
   width: 7vh;
   background-color: #ff7500;
   border-radius: 50vw;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.shopping-basket:hover {
+.shopping-basket-container:hover {
   filter: invert(1);
   transition: all 0.3s ease;
 }
+
+.shopping-basket__text-total {
+  position: relative;
+  top: 12px;
+  background-color: #A7A7A7;
+  font-family: 'Ruda', sans-serif;
+  margin: 0;
+  padding: 4px 4px 12px;
+  border-radius: 12px 12px 0 0;
+  max-width: content-box;
+}
+
