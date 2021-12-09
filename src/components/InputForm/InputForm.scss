@@ -1,0 +1,37 @@
+.form {
+  display: flex;
+  justify-content: center;
+  background-color: #A7A7A7;
+  height: 540px;
+
+  &__container {
+    background-color: #838383;
+    margin: 24px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #232323;
+
+  }
+
+  &__title {
+    display: flex;
+    font-family: 'Ruda', sans-serif;
+    justify-content: center;
+    font-weight: bold;
+    color: #ff6c00;
+    box-shadow: black;
+    color: #FFFFFF;
+
+  }
+
+  &__section {
+    display: flex;
+    margin: 30px;
+  }
+
+  &__section__input {
+    margin: 100px; // ?
+  }
+}
+
+

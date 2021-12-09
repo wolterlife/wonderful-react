@@ -1,6 +1,14 @@
 import React from 'react';
+import './normalize.css';
 import './App.scss'; // delete this line after relocate to react
-import { Header, ShoppingBasket, Slider, NavigationMenu, Footer } from './components/index';
+import {
+  Header,
+  ShoppingBasket,
+  Slider,
+  NavigationMenu,
+  Footer,
+  InputForm,
+} from './components/index';
 
 class App extends React.Component {
   render() {
@@ -10,6 +18,7 @@ class App extends React.Component {
         <ShoppingBasket />
         <Slider />
         <NavigationMenu />
+        <InputForm />
         <Footer />
       </>
     );
