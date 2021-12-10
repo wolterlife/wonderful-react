@@ -1,7 +1,6 @@
 import React from 'react';
 import './InputForm.scss';
 import { TextField, Button } from '@mui/material';
-import DateChoose from '../DatePicker/DatePicker';
 
 const InputForm = () => {
   return (
@@ -14,6 +13,7 @@ const InputForm = () => {
             id="filled-basic"
             label="Имя"
             variant="filled"
+            sx={{}}
           />
           <TextField
             className="form__section__input--short"
@@ -49,11 +49,47 @@ const InputForm = () => {
         </div>
         <p className="form__title">Дата и время:</p>
         <div className="form__section">
-          <DateChoose />
+          <Button
+            style={{
+              borderColor: '#ff7500',
+              color: '#ff7500',
+            }}
+            variant="outlined"
+            className="form__button"
+          >
+            Как можно скорее
+          </Button>
+          <input className="form__date" name="time" type="datetime-local" />
         </div>
-        <Button variant="outlined" className="form__button">
-          Доставить как можно скорее
-        </Button>
+        <div className="form__section">
+          <Button
+            style={{
+              borderColor: '#0fff23',
+              color: '#0fff23',
+            }}
+            variant="outlined"
+            className="form__button"
+          >
+            Оформить заказ
+          </Button>
+          <Button
+            style={{
+              borderColor: '#ff0f0f',
+              color: '#ff0f0f',
+            }}
+            variant="outlined"
+            className="form__button"
+          >
+            Очистить корзину
+          </Button>
+        </div>
+        <hr className="form__line" />
+        <p className="form__total-text">
+          Итого:
+          <span className="form__price">
+            <b id="price">2.50 руб.</b>
+          </span>
+        </p>
       </div>
     </form>
   );

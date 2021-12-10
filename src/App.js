@@ -1,6 +1,6 @@
 import React from 'react';
 import './normalize.css';
-import './App.scss'; // delete this line after relocate to react
+// import './App.scss'; // delete this line after relocate to react
 import {
   Header,
   ShoppingBasket,

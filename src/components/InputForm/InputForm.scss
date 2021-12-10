@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   background-color: #A7A7A7;
-  height: 540px;
 
   &__container {
     margin: 24px;
@@ -17,7 +16,6 @@
     font-family: 'Ruda', sans-serif;
     justify-content: center;
     font-weight: bold;
-    color: #ff6c00;
     color: #FFFFFF;
   }
 
@@ -40,6 +38,25 @@
 
   &__button {
     font-family: 'Ruda', sans-serif;
+  }
+
+  &__date {
+    width: 48%;
+    border-radius: 4px;
+  }
+
+  &__line {
+    background-color: #A7A7A7;
+  }
+
+  &__total-text {
+    font-family: 'Ruda', sans-serif;
+    color: #FFFFFF;
+  }
+
+  &__price {
+    float: right;
+    color: #FFFFFF;
   }
 }
 
