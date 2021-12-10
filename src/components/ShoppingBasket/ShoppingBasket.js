@@ -8,7 +8,6 @@ const ShoppingBasket = () => {
       <input
         className="shopping-basket__button"
         alt="Просмотреть корзину"
-        onClick="openCart(false)"
         src="img/icons/cart-mob.svg"
         type="image"
       />

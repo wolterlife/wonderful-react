@@ -5,7 +5,6 @@
   height: 540px;
 
   &__container {
-    background-color: #838383;
     margin: 24px;
     padding: 12px;
     border-radius: 12px;
@@ -19,18 +18,28 @@
     justify-content: center;
     font-weight: bold;
     color: #ff6c00;
-    box-shadow: black;
     color: #FFFFFF;
-
   }
 
   &__section {
-    display: flex;
     margin: 30px;
+    display: flex;
+    justify-content: space-between;
   }
 
-  &__section__input {
-    margin: 100px; // ?
+  &__section__input--short {
+    background-color: #fff;
+    border-radius: 4px;
+    max-width: 49%;
+  }
+
+  &__section__input--long {
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  &__button {
+    font-family: 'Ruda', sans-serif;
   }
 }
 

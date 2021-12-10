@@ -53,7 +53,7 @@ const NavigationMenu = () => {
             onFocus={() => colorChange(5)}
           >
             <a href="" className="navigation-menu__link">
-              Купоны
+              Промокод
             </a>
           </li>
         </ul>
