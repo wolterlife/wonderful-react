@@ -13,7 +13,10 @@ const InputForm = () => {
             id="filled-basic"
             label="Имя"
             variant="filled"
-            sx={{}}
+            sx={{
+              borderColor: 'green',
+              borderWidth: 2,
+            }}
           />
           <TextField
             className="form__section__input--short"

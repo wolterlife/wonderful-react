@@ -1,14 +1,12 @@
 import React from 'react';
-import './normalize.css';
+import './normalize.scss';
 // import './App.scss'; // delete this line after relocate to react
-import {
-  Header,
-  ShoppingBasket,
-  Slider,
-  NavigationMenu,
-  Footer,
-  InputForm,
-} from './components/index';
+import Footer from './components/Footer/Footer';
+import Slider from './components/GlideSlideBar/GlideSlideBar';
+import Header from './components/Header/Header';
+import NavigationMenu from './components/NavigationMenu/NavigationMenu';
+import ShoppingBasket from './components/ShoppingBasket/ShoppingBasket';
+import InputForm from './components/InputForm/InputForm';
 
 class App extends React.Component {
   render() {
