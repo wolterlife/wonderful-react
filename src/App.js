@@ -1,24 +1,21 @@
 import React from 'react';
 import './normalize.scss';
 // import './App.scss'; // delete this line after relocate to react
-import Footer from './components/Footer';
-import Slider from './components/GlideSlideBar';
-import Header from './components/Header';
-import NavigationMenu from './components/NavigationMenu';
-import ShoppingBasket from './components/ShoppingBasket';
-import InputForm from './components/InputForm';
+import { Routes, Route } from 'react-router-dom';
+import Home from './features/Home/Home';
+import Admin from './features/Admin/Admin';
+import SignIn from './features/SignIn/SignIn';
+import NotFoundPage from './features/NotFoundPage/NotFoundPage';
 
 class App extends React.Component {
   render() {
     return (
-      <>
-        <Header />
-        <ShoppingBasket />
-        <Slider />
-        <NavigationMenu />
-        <InputForm />
-        <Footer />
-      </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     );
   }
 }

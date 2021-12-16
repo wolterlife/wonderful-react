@@ -1,4 +1,4 @@
-.form {
+.auth-form {
   display: flex;
   justify-content: center;
   background-color: #A7A7A7;
@@ -8,7 +8,6 @@
     padding: 12px;
     border-radius: 12px;
     background: #232323;
-
   }
 
   &__title {
@@ -19,8 +18,17 @@
     color: #FFFFFF;
   }
 
+  &__img-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 48px;
+  }
+
   &__section {
-    margin: 30px;
+    margin: 15px;
     display: flex;
     justify-content: space-between;
   }
@@ -37,27 +45,11 @@
   }
 
   &__button {
-    width: 49%;
+    width: 100%;
     font-family: 'Ruda', sans-serif;
   }
 
   &__link {
-    width: 100%;
-  }
-
-  &__line {
-    background-color: #A7A7A7;
-  }
-
-  &__total-text {
-    font-family: 'Ruda', sans-serif;
-    color: #FFFFFF;
-  }
-
-  &__price {
-    float: right;
-    color: #FFFFFF;
+    text-decoration: none;
   }
 }
-
-
