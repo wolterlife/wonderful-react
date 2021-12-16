@@ -1,7 +1,7 @@
 import React from 'react';
 import './InputForm.scss';
 import { Button, TextField } from '@mui/material';
-import DateTimePicker from '../DateTimePicker/DateTimePicker';
+import DateTimePicker from '../DateTimePicker';
 
 const InputForm = () => {
   return (
@@ -53,6 +53,7 @@ const InputForm = () => {
         </div>
         <p className="form__title">Дата и время:</p>
         <div className="form__section">
+          <DateTimePicker />
           <Button
             style={{
               borderColor: '#ff7500',
@@ -63,7 +64,6 @@ const InputForm = () => {
           >
             Как можно скорее
           </Button>
-          <DateTimePicker />
         </div>
         <div className="form__section">
           <Button

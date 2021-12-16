@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.scss';
-import SignInLink from '../SignInLink/SignInLink';
+import SignInLink from '../SignInLink';
 
 const Header = () => {
   return (
