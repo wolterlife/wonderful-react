@@ -4,6 +4,7 @@ import Slider from '../../components/GlideSlideBar';
 import NavigationMenu from '../../components/NavigationMenu';
 import InputForm from '../../components/InputForm';
 import HeaderWithButton from '../../components/HeaderWithButton';
+import Footer from '../../components/Footer';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Slider />
       <NavigationMenu />
       <InputForm />
+      <Footer />
     </>
   );
 };

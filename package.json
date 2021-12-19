@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.7.1",
     "@mui/lab": "^5.0.0-alpha.59",
     "@mui/material": "^5.2.2",
     "@testing-library/jest-dom": "^5.15.0",
