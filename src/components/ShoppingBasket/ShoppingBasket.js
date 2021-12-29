@@ -3,7 +3,7 @@ import './ShoppingBasket.scss';
 
 const ShoppingBasket = () => {
   return (
-    <div className="shopping-basket-container">
+    <div className="shopping-basket">
       <p className="shopping-basket__text-total">2.50</p>
       <input
         className="shopping-basket__button"

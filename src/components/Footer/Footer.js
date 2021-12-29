@@ -3,15 +3,15 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <div className="footer__container">
-        <a className="container__link" href="">
+        <a className="footer__link" href="">
           <p>Правовая информация</p>
         </a>
-        <a className="container__link" href="">
+        <a className="footer__link" href="">
           <p>Обратная связь</p>
         </a>
-        <p className="container__paragraph">NEON PIZZA 2021</p>
+        <p className="footer__paragraph">NEON PIZZA 2021</p>
       </div>
       <div className="footer__social-media-block">
         <a className="footer__img-container" href="">

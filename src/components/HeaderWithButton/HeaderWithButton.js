@@ -4,7 +4,7 @@ import SignInLink from '../SignInLink';
 
 const HeaderWithButton = () => {
   return (
-    <header>
+    <header className="header">
       <div className="header__container">
         <img alt="" className="header__logo" src="img/logo-pizza.png" />
         <SignInLink />

@@ -1,12 +1,6 @@
 import React from 'react';
 import InputForm from '../../components/InputForm';
 
-const Admin = () => {
-  return (
-    <>
-      <InputForm />
-    </>
-  );
-};
+const Admin = () => <InputForm />;
 
 export default Admin;

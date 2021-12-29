@@ -1,4 +1,4 @@
-.shopping-basket-container {
+.shopping-basket {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -20,7 +20,7 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.shopping-basket-container:hover {
+.shopping-basket:hover {
   filter: invert(1);
   transition: all 0.3s ease;
 }
