@@ -1,5 +1,5 @@
-import React from 'react';
+import PageParagraph from '../../components/PageParagraph';
 
-const NotFoundPage = () => <p>Страница не найдена, 404 :(</p>;
+const NotFoundPage = () => <PageParagraph />;
 
 export default NotFoundPage;

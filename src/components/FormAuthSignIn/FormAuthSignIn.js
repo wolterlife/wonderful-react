@@ -17,6 +17,8 @@ const FormAuthSignIn = () => {
             id="filled-basic"
             label="Email"
             variant="filled"
+            type="email"
+            color="warning"
           />
         </div>
         <div className="auth-form__section">
@@ -25,6 +27,8 @@ const FormAuthSignIn = () => {
             id="filled-basic"
             label="Пароль"
             variant="filled"
+            type="password"
+            color="warning"
           />
         </div>
         <div className="auth-form__section">

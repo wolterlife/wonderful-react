@@ -13,12 +13,13 @@ const DateTimePicker = () => {
       <DesktopDateTimePicker
         label="Выбрать дату и время"
         value={value}
+        color="warning"
         minDate={new Date('2017-01-01')}
         onChange={newValue => {
           setValue(newValue);
         }}
         renderInput={params => (
-          <TextField variant="filled" className="form__date-input" {...params} />
+          <TextField color="warning" variant="filled" className="form__date-input" {...params} />
         )}
       />
     </LocalizationProvider>

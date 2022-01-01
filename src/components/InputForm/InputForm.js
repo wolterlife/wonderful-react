@@ -14,12 +14,14 @@ const InputForm = () => {
             id="filled-basic"
             label="Имя"
             variant="filled"
+            color="warning"
           />
           <TextField
             className="form__section__input--short"
             id="filled-basic"
             label="Фамилия"
             variant="filled"
+            color="warning"
           />
         </div>
         <div className="form__section">
@@ -29,6 +31,7 @@ const InputForm = () => {
             label="Адрес"
             variant="filled"
             fullWidth
+            color="warning"
           />
         </div>
         <div className="form__section">
@@ -38,6 +41,7 @@ const InputForm = () => {
             label="Номер телефона"
             fullWidth
             variant="filled"
+            color="warning"
           />
           <TextField
             className="form__section__input--short"
@@ -45,6 +49,7 @@ const InputForm = () => {
             label="Промокод (если есть)"
             fullWidth
             variant="filled"
+            color="warning"
           />
         </div>
         <p className="form__title">Дата и время:</p>

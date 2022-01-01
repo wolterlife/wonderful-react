@@ -1,0 +1,18 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+  font-size: 64px;
+  font-weight: bold;
+  font-family: 'Ruda', sans-serif;
+  color: #ff7500;
+
+  &__number {
+    font-size: 94px;
+  }
+}
+
+

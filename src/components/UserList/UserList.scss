@@ -1,0 +1,27 @@
+.user-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #A7A7A7;
+
+  &__title {
+    font-family: 'Ruda', sans-serif;
+    margin-top: 24px;
+  }
+
+  &__table {
+    font-family: 'Ruda', sans-serif;
+    border-radius: 4px;
+    background-color: #1a1a1a;
+    color: white;
+    border-collapse: collapse;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #666;
+    margin: 24px;
+  }
+
+  th {
+    padding: 18px;
+  }
+}

@@ -1,6 +1,16 @@
 import React from 'react';
-import InputForm from '../../components/InputForm';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import UserList from '../../components/UserList';
 
-const Admin = () => <InputForm />;
+const Admin = () => {
+  return (
+    <>
+      <Header showSignIn={false} showBack />
+      <UserList />
+      <Footer />
+    </>
+  );
+};
 
 export default Admin;
