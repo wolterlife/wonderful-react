@@ -1,0 +1,13 @@
+.button-back {
+  position: absolute;
+  right: 2%;
+  top: 32%;
+
+  &__image {
+    width: 48px;
+  }
+
+  &:hover {
+    filter: brightness(0) invert(1);
+  }
+}

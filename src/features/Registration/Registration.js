@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import FormAuthSignIn from '../../components/FormAuthSignIn';
+import FormAuthRegistration from '../../components/FormAuthRegistration';
 
-const SignIn = () => {
+const Registration = () => {
   return (
     <>
       <Header showSignIn={false} showBack />
-      <FormAuthSignIn />
+      <FormAuthRegistration />
       <Footer />
     </>
   );
 };
 
-export default SignIn;
+export default Registration;

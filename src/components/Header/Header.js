@@ -2,13 +2,15 @@ import React from 'react';
 import './Header.scss';
 import PropTypes from 'prop-types';
 import SignInLink from '../SignInLink';
+import ButtonBack from '../ButtonBack/ButtonBack';
 
-const Header = ({ isAuthorized }) => {
+const Header = ({ showSignIn, showBack }) => {
   return (
     <header className="header">
       <div className="header__container">
         <img alt="" className="header__logo" src="img/logo-pizza.png" />
-        {!isAuthorized && <SignInLink />}
+        {showSignIn && <SignInLink />}
+        {showBack && <ButtonBack />}
       </div>
     </header>
   );
@@ -17,5 +19,6 @@ const Header = ({ isAuthorized }) => {
 export default Header;
 
 Header.propTypes = {
-  isAuthorized: PropTypes.bool.isRequired,
+  showSignIn: PropTypes.bool.isRequired,
+  showBack: PropTypes.bool.isRequired,
 };

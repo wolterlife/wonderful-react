@@ -1,6 +1,7 @@
 import React from 'react';
 import './FormAuthSignIn.scss';
 import { Button, TextField } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const FormAuthSignIn = () => {
   return (
@@ -27,28 +28,32 @@ const FormAuthSignIn = () => {
           />
         </div>
         <div className="auth-form__section">
-          <Button
-            style={{
-              borderColor: '#0fff23',
-              color: '#0fff23',
-            }}
-            variant="outlined"
-            className="auth-form__button"
-          >
-            Войти
-          </Button>
+          <Link to="/" className="auth-form__button">
+            <Button
+              style={{
+                borderColor: '#0fff23',
+                color: '#0fff23',
+              }}
+              variant="outlined"
+              className="auth-form__button"
+            >
+              Войти
+            </Button>
+          </Link>
         </div>
         <div className="auth-form__section">
-          <Button
-            style={{
-              borderColor: '#ff7500',
-              color: '#ff7500',
-            }}
-            variant="outlined"
-            className="auth-form__button"
-          >
-            Регистрация
-          </Button>
+          <Link to="/registration" className="auth-form__button">
+            <Button
+              style={{
+                borderColor: '#ff7500',
+                color: '#ff7500',
+              }}
+              variant="outlined"
+              className="auth-form__button"
+            >
+              Регистрация
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
