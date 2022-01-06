@@ -4,8 +4,27 @@ import { Button, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const FormAuthRegistration = () => {
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [checkPassword, setCheckPassword] = React.useState('');
+  const [firstName, setFirstName] = React.useState('');
+  const [secondName, setSecondName] = React.useState('');
+  const [address, setAddress] = React.useState('');
+  const [phoneNumber, setPhoneNumber] = React.useState('');
+
   function addUser() {
-    console.log('new user');
+    if (password === checkPassword) {
+      const userData = {
+        email,
+        password,
+        firstName,
+        secondName,
+        address,
+        phoneNumber,
+      };
+      console.log('Регистрация успешна:');
+      console.log(userData);
+    } else console.log('Пароли не совпадают');
   }
 
   return (
@@ -20,6 +39,7 @@ const FormAuthRegistration = () => {
             fullWidth
             type="email"
             color="warning"
+            onChange={e => setEmail(e.target.value)}
           />
         </div>
         <div className="registration__section">
@@ -29,6 +49,7 @@ const FormAuthRegistration = () => {
             variant="filled"
             color="warning"
             type="password"
+            onChange={e => setPassword(e.target.value)}
           />
           <TextField
             className="registration__section__input--short"
@@ -36,6 +57,7 @@ const FormAuthRegistration = () => {
             variant="filled"
             color="warning"
             type="password"
+            onChange={e => setCheckPassword(e.target.value)}
           />
         </div>
         <div className="registration__section">
@@ -44,12 +66,14 @@ const FormAuthRegistration = () => {
             label="Имя"
             variant="filled"
             color="warning"
+            onChange={e => setFirstName(e.target.value)}
           />
           <TextField
             className="registration__section__input--short"
             label="Фамилия"
             variant="filled"
             color="warning"
+            onChange={e => setSecondName(e.target.value)}
           />
         </div>
         <div className="registration__section">
@@ -58,12 +82,14 @@ const FormAuthRegistration = () => {
             label="Адрес"
             variant="filled"
             color="warning"
+            onChange={e => setAddress(e.target.value)}
           />
           <TextField
             className="registration__section__input--short"
             label="Номер телефона"
             variant="filled"
             color="warning"
+            onChange={e => setPhoneNumber(e.target.value)}
           />
         </div>
         <div className="registration__section">
