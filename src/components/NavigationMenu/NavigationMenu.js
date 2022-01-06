@@ -52,8 +52,8 @@ const NavigationMenu = () => {
             onBlur={() => colorBack(5)}
             onFocus={() => colorChange(5)}
           >
-            <a href="" className="navigation-menu__link">
-              Промокод
+            <a href="#delivery" className="navigation-menu__link">
+              Доставка
             </a>
           </li>
         </ul>
@@ -95,7 +95,7 @@ const NavigationMenu = () => {
             src="img/neon-choose/snacks.png"
           />
         </a>
-        <a href="">
+        <a href="#delivery">
           <img
             alt=""
             className="choose-img"
@@ -109,16 +109,13 @@ const NavigationMenu = () => {
   );
 };
 
-function colorChange(param) {
-  console.log(param);
+function colorChange() {
   // document.getElementById(`m_${param.toString()}`).style.filter = 'invert(1)';
   // document.getElementById(`img_${param.toString()}`).style.borderBottom = '3px solid #00a0ff';
   // document.getElementById(`img_${param.toString()}`).style.color = '#ffffff';
 } // change color in visual choosing menu
 
-function colorBack(param) {
-  console.log(param);
-
+function colorBack() {
   // document.getElementById(`m_${param.toString()}`).style.filter = 'invert(0)';
   // document.getElementById(`img_${param.toString()}`).style.borderBottom = '3px solid #ff6c00';
   // document.getElementById(`img_${param.toString()}`).style.color = '#b4b4b4';

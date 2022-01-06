@@ -14,7 +14,6 @@ const FormAuthSignIn = () => {
         <div className="auth-form__section">
           <TextField
             className="auth-form__section__input--long"
-            id="filled-basic"
             label="Email"
             variant="filled"
             type="email"
@@ -24,7 +23,6 @@ const FormAuthSignIn = () => {
         <div className="auth-form__section">
           <TextField
             className="auth-form__section__input--long"
-            id="filled-basic"
             label="Пароль"
             variant="filled"
             type="password"

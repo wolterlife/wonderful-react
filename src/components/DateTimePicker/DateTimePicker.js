@@ -14,7 +14,8 @@ const DateTimePicker = () => {
         label="Выбрать дату и время"
         value={value}
         color="warning"
-        minDate={new Date('2017-01-01')}
+        minDate={new Date('2022-01-01')}
+        mask=""
         onChange={newValue => {
           setValue(newValue);
         }}

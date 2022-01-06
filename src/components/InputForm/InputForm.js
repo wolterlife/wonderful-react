@@ -5,20 +5,18 @@ import DateTimePicker from '../DateTimePicker';
 
 const InputForm = () => {
   return (
-    <form className="form">
+    <form className="form" id="delivery">
       <div className="form__container">
         <p className="form__title">Доставка до двери</p>
         <div className="form__section">
           <TextField
             className="form__section__input--short"
-            id="filled-basic"
             label="Имя"
             variant="filled"
             color="warning"
           />
           <TextField
             className="form__section__input--short"
-            id="filled-basic"
             label="Фамилия"
             variant="filled"
             color="warning"
@@ -27,7 +25,6 @@ const InputForm = () => {
         <div className="form__section">
           <TextField
             className="form__section__input--long"
-            id="filled-basic"
             label="Адрес"
             variant="filled"
             fullWidth
@@ -37,7 +34,6 @@ const InputForm = () => {
         <div className="form__section">
           <TextField
             className="form__section__input--short"
-            id="filled-basic"
             label="Номер телефона"
             fullWidth
             variant="filled"
@@ -45,7 +41,6 @@ const InputForm = () => {
           />
           <TextField
             className="form__section__input--short"
-            id="filled-basic"
             label="Промокод (если есть)"
             fullWidth
             variant="filled"

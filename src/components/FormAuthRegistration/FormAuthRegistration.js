@@ -4,6 +4,10 @@ import { Button, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const FormAuthRegistration = () => {
+  function addUser() {
+    console.log('new user');
+  }
+
   return (
     <form className="registration">
       <div className="registration__container">
@@ -11,7 +15,6 @@ const FormAuthRegistration = () => {
         <div className="registration__section">
           <TextField
             className="registration__section__input--long"
-            id="filled-basic"
             label="Email"
             variant="filled"
             fullWidth
@@ -22,7 +25,6 @@ const FormAuthRegistration = () => {
         <div className="registration__section">
           <TextField
             className="registration__section__input--short"
-            id="filled-basic"
             label="Пароль"
             variant="filled"
             color="warning"
@@ -30,7 +32,6 @@ const FormAuthRegistration = () => {
           />
           <TextField
             className="registration__section__input--short"
-            id="filled-basic"
             label="Подтвердите пароль"
             variant="filled"
             color="warning"
@@ -40,14 +41,12 @@ const FormAuthRegistration = () => {
         <div className="registration__section">
           <TextField
             className="registration__section__input--short"
-            id="filled-basic"
             label="Имя"
             variant="filled"
             color="warning"
           />
           <TextField
             className="registration__section__input--short"
-            id="filled-basic"
             label="Фамилия"
             variant="filled"
             color="warning"
@@ -56,14 +55,12 @@ const FormAuthRegistration = () => {
         <div className="registration__section">
           <TextField
             className="registration__section__input--short"
-            id="filled-basic"
             label="Адрес"
             variant="filled"
             color="warning"
           />
           <TextField
             className="registration__section__input--short"
-            id="filled-basic"
             label="Номер телефона"
             variant="filled"
             color="warning"
@@ -72,6 +69,7 @@ const FormAuthRegistration = () => {
         <div className="registration__section">
           <Link to="/admin" className="registration__section__input--short registration__button">
             <Button
+              onClick={() => addUser()}
               style={{
                 borderColor: '#0fff23',
                 color: '#0fff23',
