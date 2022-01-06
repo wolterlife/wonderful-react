@@ -5,6 +5,7 @@ import NavigationMenu from '../../components/NavigationMenu';
 import InputForm from '../../components/InputForm';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
+import ListOfMenu from '../../components/ListOfMenu/ListOfMenu';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <ShoppingBasket />
       <Slider />
       <NavigationMenu />
+      <ListOfMenu />
       <InputForm />
       <Footer />
     </>
