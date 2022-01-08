@@ -1,0 +1,52 @@
+.form-add-menu {
+  display: flex;
+  justify-content: center;
+  background-color: #A7A7A7;
+
+  &__container {
+    margin: 24px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #232323;
+
+  }
+
+  &__title {
+    display: flex;
+    font-family: 'Ruda', sans-serif;
+    justify-content: center;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+
+  &__section {
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__section__input--short {
+    background-color: #fff;
+    border-radius: 4px;
+    max-width: 49%;
+  }
+
+  &__section__input--long {
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  &__button {
+    background-color: #232323;
+    text-decoration: none;
+    font-family: 'Ruda', sans-serif;
+    height: 48px;
+    width: 100%;
+  }
+
+  &__section__radio-button {
+    color: white;
+  }
+}
+
+

@@ -1,9 +1,10 @@
 import React from 'react';
 import './FormAuthRegistration.scss';
 import { Button, TextField } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const FormAuthRegistration = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [checkPassword, setCheckPassword] = React.useState('');
@@ -12,18 +13,31 @@ const FormAuthRegistration = () => {
   const [address, setAddress] = React.useState('');
   const [phoneNumber, setPhoneNumber] = React.useState('');
 
+  function redirect() {
+    navigate('/admin');
+  }
+
   function addUser() {
     if (password === checkPassword) {
-      const userData = {
-        email,
-        password,
-        firstName,
-        secondName,
-        address,
-        phoneNumber,
-      };
-      console.log('Регистрация успешна:');
-      console.log(userData);
+      const userData = [
+        {
+          email,
+          password,
+          firstName,
+          secondName,
+          address,
+          phoneNumber,
+          orderHistory: [],
+        },
+      ];
+      let oldData = localStorage.getItem('listUsers');
+      // check emails
+      oldData = JSON.parse(oldData);
+      console.log(oldData);
+      //
+      console.log(`OLD DATA: ${oldData}`);
+      localStorage.setItem('listUsers', JSON.stringify(userData));
+      redirect();
     } else console.log('Пароли не совпадают');
   }
 
@@ -93,7 +107,7 @@ const FormAuthRegistration = () => {
           />
         </div>
         <div className="registration__section">
-          <Link to="/admin" className="registration__section__input--short registration__button">
+          <div className="registration__section__input--short registration__button">
             <Button
               onClick={() => addUser()}
               style={{
@@ -105,7 +119,7 @@ const FormAuthRegistration = () => {
             >
               Создать аккаунт
             </Button>
-          </Link>
+          </div>
           <Link to="/signIn" className="registration__section__input--short registration__button">
             <Button
               style={{

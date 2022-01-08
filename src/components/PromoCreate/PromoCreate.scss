@@ -1,0 +1,39 @@
+.promo-form {
+  justify-content: center;
+  background-color: #A7A7A7;
+  display: flex;
+
+
+  &__container {
+    margin: 24px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #232323;
+  }
+
+  &__title {
+    display: flex;
+    font-family: 'Ruda', sans-serif;
+    justify-content: center;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+
+  &__section {
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__section__input--long {
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  &__button {
+    text-decoration: none;
+    width: 100%;
+    height: 48px;
+    font-family: 'Ruda', sans-serif;
+  }
+}

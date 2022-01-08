@@ -1,11 +1,11 @@
 import React from 'react';
-import './UserList.scss';
+import './ItemsList.scss';
 import { Button } from '@mui/material';
 
-const UserList = () => {
+const ItemsList = () => {
   return (
     <div className="user-list">
-      <p className="user-list__title">Список пользователей</p>
+      <p className="user-list__title">Состав меню:</p>
       <table className="user-list__table" border="1">
         <tr>
           <th>id</th>
@@ -69,4 +69,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default ItemsList;
