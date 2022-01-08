@@ -1,16 +1,16 @@
 import React from 'react';
-import ShoppingBasket from '../../components/ShoppingBasket';
-import Slider from '../../components/GlideSlideBar';
-import NavigationMenu from '../../components/NavigationMenu';
-import InputForm from '../../components/InputForm';
+import ShoppingBasket from './components/ShoppingBasket';
+import Slider from './components/GlideSlideBar';
+import NavigationMenu from './components/NavigationMenu';
+import InputForm from './components/InputForm';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
-import ListOfMenu from '../../components/ListOfMenu/ListOfMenu';
+import ListOfMenu from './components/ListOfMenu';
 
 const Home = () => {
   return (
     <>
-      <Header showSignIn showBack={false} />
+      <Header isSignInVisible isBackLinkVisible={false} />
       <ShoppingBasket />
       <Slider />
       <NavigationMenu />

@@ -6,7 +6,7 @@ import FormAuthSignIn from '../../components/FormAuthSignIn';
 const SignIn = () => {
   return (
     <>
-      <Header showSignIn={false} showBack />
+      <Header isSignInVisible={false} isBackLinkVisible />
       <FormAuthSignIn />
       <Footer />
     </>

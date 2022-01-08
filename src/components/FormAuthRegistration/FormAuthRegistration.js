@@ -1,7 +1,7 @@
 import React from 'react';
 import './FormAuthRegistration.scss';
 import { Button, TextField } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const FormAuthRegistration = () => {
   const navigate = useNavigate();
@@ -12,10 +12,6 @@ const FormAuthRegistration = () => {
   const [secondName, setSecondName] = React.useState('');
   const [address, setAddress] = React.useState('');
   const [phoneNumber, setPhoneNumber] = React.useState('');
-
-  function redirect() {
-    navigate('/admin');
-  }
 
   function addUser() {
     if (password === checkPassword) {
@@ -37,7 +33,7 @@ const FormAuthRegistration = () => {
       //
       console.log(`OLD DATA: ${oldData}`);
       localStorage.setItem('listUsers', JSON.stringify(userData));
-      redirect();
+      navigate('/admin');
     } else console.log('Пароли не совпадают');
   }
 
@@ -120,8 +116,9 @@ const FormAuthRegistration = () => {
               Создать аккаунт
             </Button>
           </div>
-          <Link to="/signIn" className="registration__section__input--short registration__button">
+          <div className="registration__section__input--short registration__button">
             <Button
+              onClick={() => navigate('/signIn')}
               style={{
                 borderColor: '#ff7500',
                 color: '#ff7500',
@@ -131,7 +128,7 @@ const FormAuthRegistration = () => {
             >
               Вернуться ко входу
             </Button>
-          </Link>
+          </div>
         </div>
       </div>
     </form>

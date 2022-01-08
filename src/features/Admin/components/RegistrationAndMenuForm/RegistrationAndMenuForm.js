@@ -1,6 +1,6 @@
 import React from 'react';
 import './RegistrationAndMenuForm.scss';
-import FormAuthRegistration from '../FormAuthRegistration';
+import FormAuthRegistration from '../../../../components/FormAuthRegistration';
 import FormAddMenu from '../FormAddMenu';
 
 const RegistrationAndMenuForm = () => {

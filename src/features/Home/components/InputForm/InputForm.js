@@ -1,7 +1,7 @@
 import React from 'react';
 import './InputForm.scss';
 import { Button, TextField } from '@mui/material';
-import DateTimePicker from '../DateTimePicker';
+import DateTimePicker from '../../../../components/DateTimePicker';
 
 const InputForm = () => {
   return (

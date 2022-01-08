@@ -1,9 +1,11 @@
 import React from 'react';
 import './FormAuthSignIn.scss';
 import { Button, TextField } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const FormAuthSignIn = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="auth-form">
       <div className="auth-form__container">
@@ -30,32 +32,30 @@ const FormAuthSignIn = () => {
           />
         </div>
         <div className="auth-form__section">
-          <Link to="/" className="auth-form__button">
-            <Button
-              style={{
-                borderColor: '#0fff23',
-                color: '#0fff23',
-              }}
-              variant="outlined"
-              className="auth-form__button"
-            >
-              Войти
-            </Button>
-          </Link>
+          <Button
+            onClick={() => navigate('/')}
+            style={{
+              borderColor: '#0fff23',
+              color: '#0fff23',
+            }}
+            variant="outlined"
+            className="auth-form__button"
+          >
+            Войти
+          </Button>
         </div>
         <div className="auth-form__section">
-          <Link to="/registration" className="auth-form__button">
-            <Button
-              style={{
-                borderColor: '#ff7500',
-                color: '#ff7500',
-              }}
-              variant="outlined"
-              className="auth-form__button"
-            >
-              Регистрация
-            </Button>
-          </Link>
+          <Button
+            onClick={() => navigate('/registration')}
+            style={{
+              borderColor: '#ff7500',
+              color: '#ff7500',
+            }}
+            variant="outlined"
+            className="auth-form__button"
+          >
+            Регистрация
+          </Button>
         </div>
       </div>
     </div>

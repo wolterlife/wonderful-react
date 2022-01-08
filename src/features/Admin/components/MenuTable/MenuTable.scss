@@ -1,4 +1,4 @@
-.user-list {
+.menu-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,11 +23,15 @@
     margin: 24px;
   }
 
-  th {
+  &__table__head {
     padding: 18px;
   }
 
-  td {
+  &__table__item {
     padding: 4px;
+  }
+
+  &__table__item__img {
+    width: 128px;
   }
 }

@@ -6,7 +6,7 @@ import FormAuthRegistration from '../../components/FormAuthRegistration';
 const Registration = () => {
   return (
     <>
-      <Header showSignIn={false} showBack />
+      <Header isSignInVisible={false} isBackLinkVisible />
       <FormAuthRegistration />
       <Footer />
     </>

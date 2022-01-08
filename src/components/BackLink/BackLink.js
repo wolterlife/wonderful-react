@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './ButtonBack.scss';
+import './BackLink.scss';
 
-const ButtonBack = () => {
+const BackLink = () => {
   return (
     <Link to="/" className="button-back">
       <img alt="Назад" className="button_back__image" src="img/back.png" />
@@ -10,4 +10,4 @@ const ButtonBack = () => {
   );
 };
 
-export default ButtonBack;
+export default BackLink;
