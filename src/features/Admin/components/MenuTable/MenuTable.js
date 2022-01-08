@@ -28,7 +28,7 @@ const MenuTable = () => {
             />
           </td>
           <td className="menu-list__table__item">
-            <Button type="button" variant="outlined">
+            <Button className="menu-list__table__item__button" type="button" variant="outlined">
               Удалить
             </Button>
           </td>
@@ -40,7 +40,7 @@ const MenuTable = () => {
           <td className="menu-list__table__item">Бобрик</td>
           <td className="menu-list__table__item">пр-т Фрунзе 33</td>
           <td className="menu-list__table__item">
-            <Button type="button" variant="outlined">
+            <Button className="menu-list__table__item__button" type="button" variant="outlined">
               Удалить
             </Button>
           </td>
@@ -52,7 +52,7 @@ const MenuTable = () => {
           <td className="menu-list__table__item">Бобрик</td>
           <td className="menu-list__table__item">пр-т Фрунзе 33</td>
           <td className="menu-list__table__item">
-            <Button type="button" variant="outlined">
+            <Button className="menu-list__table__item__button" type="button" variant="outlined">
               Удалить
             </Button>
           </td>

@@ -7,118 +7,39 @@ const NavigationMenu = () => {
       <div className="navigation-menu__container">
         <ul className="navigation-menu__list">
           <li className="navigation-menu__item">
-            <a href="" className="navigation-menu__link">
-              e
-            </a>
-          </li>
-          <li
-            className="navigation-menu__item"
-            onBlur={() => colorBack(1)}
-            onFocus={() => colorChange(1)}
-          >
             <a href="#pizza" className="navigation-menu__link">
-              Пицца
+              <p className="navigation-menu__link__text">Пицца</p>
+              <img alt="Пицца" className="choose-img" src="img/neon-choose/pizza.png" />
             </a>
           </li>
-          <li
-            className="navigation-menu__item"
-            onBlur={() => colorBack(2)}
-            onFocus={() => colorChange(2)}
-          >
+          <li className="navigation-menu__item">
             <a href="#drinks" className="navigation-menu__link">
-              Напитки
+              <p className="navigation-menu__link__text">Напитки</p>
+              <img alt="Пицца" className="choose-img" src="img/neon-choose/drinks.png" />
             </a>
           </li>
-          <li
-            className="navigation-menu__item"
-            onBlur={() => colorBack(3)}
-            onFocus={() => colorChange(3)}
-          >
+          <li className="navigation-menu__item">
             <a href="#desserts" className="navigation-menu__link">
-              Десерты
+              <p className="navigation-menu__link__text">Десерты</p>
+              <img alt="Пицца" className="choose-img" src="img/neon-choose/desserts.png" />
             </a>
           </li>
-          <li
-            className="navigation-menu__item"
-            onBlur={() => colorBack(4)}
-            onFocus={() => colorChange(4)}
-          >
+          <li className="navigation-menu__item">
             <a href="#snacks" className="navigation-menu__link">
-              Закуски
+              <p className="navigation-menu__link__text">Закуски</p>
+              <img alt="Пицца" className="choose-img" src="img/neon-choose/snacks.png" />
             </a>
           </li>
-          <li
-            className="navigation-menu__item"
-            onBlur={() => colorBack(5)}
-            onFocus={() => colorChange(5)}
-          >
+          <li className="navigation-menu__item">
             <a href="#delivery" className="navigation-menu__link">
-              Доставка
+              <p className="navigation-menu__link__text">Доставка</p>
+              <img alt="Пицца" className="choose-img" src="img/neon-choose/gift.png" />
             </a>
           </li>
         </ul>
       </div>
-      <div className="choose">
-        <a href="#pizza">
-          <img
-            alt="Пицца"
-            className="choose-img"
-            onBlur={() => colorBack(1)}
-            onFocus={() => colorChange(1)}
-            src="img/neon-choose/pizza.png"
-          />
-        </a>
-        <a href="#drinks">
-          <img
-            alt="Напитки"
-            className="choose-img"
-            onBlur={() => colorBack(2)}
-            onFocus={() => colorChange(2)}
-            src="img/neon-choose/drinks.png"
-          />
-        </a>
-        <a href="#desserts">
-          <img
-            alt="Десерты"
-            className="choose-img"
-            onBlur={() => colorBack(3)}
-            onFocus={() => colorChange(3)}
-            src="img/neon-choose/desserts.png"
-          />
-        </a>
-        <a href="#snacks">
-          <img
-            alt="Закуски"
-            className="choose-img"
-            onBlur={() => colorBack(4)}
-            onFocus={() => colorChange(4)}
-            src="img/neon-choose/snacks.png"
-          />
-        </a>
-        <a href="#delivery">
-          <img
-            alt=""
-            className="choose-img"
-            onBlur={() => colorBack(5)}
-            onFocus={() => colorChange(5)}
-            src="img/neon-choose/gift.png"
-          />
-        </a>
-      </div>
     </nav>
   );
 };
-
-function colorChange() {
-  // document.getElementById(`m_${param.toString()}`).style.filter = 'invert(1)';
-  // document.getElementById(`img_${param.toString()}`).style.borderBottom = '3px solid #00a0ff';
-  // document.getElementById(`img_${param.toString()}`).style.color = '#ffffff';
-} // change color in visual choosing menu
-
-function colorBack() {
-  // document.getElementById(`m_${param.toString()}`).style.filter = 'invert(0)';
-  // document.getElementById(`img_${param.toString()}`).style.borderBottom = '3px solid #ff6c00';
-  // document.getElementById(`img_${param.toString()}`).style.color = '#b4b4b4';
-} // back color in visual choosing menu
 
 export default NavigationMenu;
