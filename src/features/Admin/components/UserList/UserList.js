@@ -3,6 +3,29 @@ import './UserList.scss';
 import { Button } from '@mui/material';
 
 const UserList = () => {
+  let data = localStorage.getItem('listUsers');
+  data = JSON.parse(data);
+  const res = data.map(function (item) {
+    return (
+      <tr key={item.id}>
+        <td className="user-list__table__item">{item.id}</td>
+        <td className="user-list__table__item">{item.email}</td>
+        <td className="user-list__table__item">{item.firstName}</td>
+        <td className="user-list__table__item">{item.secondName}</td>
+        <td className="user-list__table__item">{item.address}</td>
+        <td className="user-list__table__item">{item.phoneNumber}</td>
+        <td className="user-list__table__item">
+          <Button type="button" variant="outlined">
+            История заказов
+          </Button>
+          <Button type="button" variant="outlined">
+            Удалить
+          </Button>
+        </td>
+      </tr>
+    );
+  });
+
   return (
     <div className="user-list">
       <p className="user-list__title">Список пользователей</p>
@@ -16,54 +39,7 @@ const UserList = () => {
           <th className="user-list__table__head">Номер телефона</th>
           <th className="user-list__table__head">Действие</th>
         </tr>
-        <tr>
-          <td className="user-list__table__item">1</td>
-          <td className="user-list__table__item">wolter.important@gmail.com</td>
-          <td className="user-list__table__item">Денис</td>
-          <td className="user-list__table__item">Бобрик</td>
-          <td className="user-list__table__item">пр-т Фрунзе 33</td>
-          <td className="user-list__table__item">375336484222</td>
-          <td className="user-list__table__item">
-            <Button type="button" variant="outlined">
-              История заказов
-            </Button>
-            <Button type="button" variant="outlined">
-              Удалить
-            </Button>
-          </td>
-        </tr>
-        <tr>
-          <td className="user-list__table__item">2</td>
-          <td className="user-list__table__item">wolter.important@gmail.com</td>
-          <td className="user-list__table__item">Денис</td>
-          <td className="user-list__table__item">Бобрик</td>
-          <td className="user-list__table__item">пр-т Фрунзе 33</td>
-          <td className="user-list__table__item">375336484222</td>
-          <td className="user-list__table__item">
-            <Button type="button" variant="outlined">
-              История заказов
-            </Button>
-            <Button type="button" variant="outlined">
-              Удалить
-            </Button>
-          </td>
-        </tr>
-        <tr>
-          <td className="user-list__table__item">3</td>
-          <td className="user-list__table__item">wolter.important@gmail.com</td>
-          <td className="user-list__table__item">Денис</td>
-          <td className="user-list__table__item">Бобрик</td>
-          <td className="user-list__table__item">пр-т Фрунзе 33</td>
-          <td className="user-list__table__item">375336484222</td>
-          <td className="user-list__table__item">
-            <Button type="button" variant="outlined">
-              История заказов
-            </Button>
-            <Button type="button" variant="outlined">
-              Удалить
-            </Button>
-          </td>
-        </tr>
+        {res}
       </table>
     </div>
   );

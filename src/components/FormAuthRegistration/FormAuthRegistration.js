@@ -13,19 +13,24 @@ const FormAuthRegistration = () => {
   const [address, setAddress] = React.useState('');
   const [phoneNumber, setPhoneNumber] = React.useState('');
 
-  function isUserUnique(checkedEmail, allUsers) {
-    console.log(allUsers);
-    // eslint-disable-next-line no-restricted-syntax
-    for (const key of allUsers) {
-      if (key.email === checkedEmail && key.email != null) return false;
-    }
-    return true;
-  }
+  // function isUserUnique(checkedEmail, allUsers) {
+  //   console.log(allUsers);
+  //   // eslint-disable-next-line no-restricted-syntax
+  //   for (const key of allUsers) {
+  //     if (key.email === checkedEmail && key.email != null) return false;
+  //   }
+  //   return true;
+  // }
 
-  function addUser() {
+  const isUserUnique = (checkedEmail, allUsers) => {
+    return !allUsers.some(user => user.email === checkedEmail);
+  };
+
+  const addUser = () => {
     if (password === checkPassword) {
       // Create object for new user (take all data from input form)
       const userData = {
+        id: 0,
         email,
         password,
         firstName,
@@ -43,11 +48,13 @@ const FormAuthRegistration = () => {
       if (isUserUnique(email, oldData)) {
         console.log('REGISTRATION SUCCESSFUL');
         oldData.push(userData);
+        if (Object.keys(oldData[0]).length === 0) oldData.shift(); // if object empty [0]
+        userData.id = oldData.length; // create id
         localStorage.setItem('listUsers', JSON.stringify(oldData));
         navigate('/admin');
       } else console.log('Аккаунт уже существует (используйте другой email)');
     } else console.log('Пароли не совпадают');
-  }
+  };
 
   return (
     <form className="registration">
@@ -117,7 +124,7 @@ const FormAuthRegistration = () => {
         <div className="registration__section">
           <div className="registration__section__input--short registration__button">
             <Button
-              onClick={() => addUser()}
+              onClick={addUser}
               style={{
                 borderColor: '#0fff23',
                 color: '#0fff23',

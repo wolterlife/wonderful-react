@@ -8,7 +8,7 @@ const FormAuthSignIn = () => {
   const [email, setEmail] = React.useState();
   const [password, setPassword] = React.useState();
 
-  function auth() {
+  const auth = () => {
     let finded = false;
     let oldData = localStorage.getItem('listUsers');
 
@@ -23,7 +23,7 @@ const FormAuthSignIn = () => {
       }
       if (!finded) console.log('Почта/пароль введены неправильно');
     } else console.log('Пустая база данных');
-  }
+  };
 
   return (
     <div className="auth-form">
@@ -54,7 +54,7 @@ const FormAuthSignIn = () => {
         </div>
         <div className="auth-form__section">
           <Button
-            onClick={() => auth()}
+            onClick={auth}
             style={{
               borderColor: '#0fff23',
               color: '#0fff23',
