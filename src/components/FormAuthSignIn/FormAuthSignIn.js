@@ -5,6 +5,25 @@ import { useNavigate } from 'react-router-dom';
 
 const FormAuthSignIn = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = React.useState();
+  const [password, setPassword] = React.useState();
+
+  function auth() {
+    let finded = false;
+    let oldData = localStorage.getItem('listUsers');
+
+    if (oldData != null) {
+      oldData = JSON.parse(oldData);
+      // eslint-disable-next-line no-restricted-syntax
+      for (const key of oldData) {
+        if (email === key.email && password === key.password && email != null && password != null) {
+          finded = true;
+          navigate('/admin');
+        }
+      }
+      if (!finded) console.log('Почта/пароль введены неправильно');
+    } else console.log('Пустая база данных');
+  }
 
   return (
     <div className="auth-form">
@@ -15,6 +34,7 @@ const FormAuthSignIn = () => {
         </div>
         <div className="auth-form__section">
           <TextField
+            onChange={e => setEmail(e.target.value)}
             className="auth-form__section__input--long"
             label="Email"
             variant="filled"
@@ -24,6 +44,7 @@ const FormAuthSignIn = () => {
         </div>
         <div className="auth-form__section">
           <TextField
+            onChange={e => setPassword(e.target.value)}
             className="auth-form__section__input--long"
             label="Пароль"
             variant="filled"
@@ -33,7 +54,7 @@ const FormAuthSignIn = () => {
         </div>
         <div className="auth-form__section">
           <Button
-            onClick={() => navigate('/')}
+            onClick={() => auth()}
             style={{
               borderColor: '#0fff23',
               color: '#0fff23',

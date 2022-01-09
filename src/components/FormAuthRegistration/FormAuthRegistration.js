@@ -13,27 +13,39 @@ const FormAuthRegistration = () => {
   const [address, setAddress] = React.useState('');
   const [phoneNumber, setPhoneNumber] = React.useState('');
 
+  function isUserUnique(checkedEmail, allUsers) {
+    console.log(allUsers);
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key of allUsers) {
+      if (key.email === checkedEmail && key.email != null) return false;
+    }
+    return true;
+  }
+
   function addUser() {
     if (password === checkPassword) {
-      const userData = [
-        {
-          email,
-          password,
-          firstName,
-          secondName,
-          address,
-          phoneNumber,
-          orderHistory: [],
-        },
-      ];
+      // Create object for new user (take all data from input form)
+      const userData = {
+        email,
+        password,
+        firstName,
+        secondName,
+        address,
+        phoneNumber,
+        orderHistory: [],
+      };
+
+      // if user first create template for user
       let oldData = localStorage.getItem('listUsers');
-      // check emails
-      oldData = JSON.parse(oldData);
-      console.log(oldData);
-      //
-      console.log(`OLD DATA: ${oldData}`);
-      localStorage.setItem('listUsers', JSON.stringify(userData));
-      navigate('/admin');
+      if (oldData != null) oldData = JSON.parse(oldData);
+      else oldData = [{}];
+
+      if (isUserUnique(email, oldData)) {
+        console.log('REGISTRATION SUCCESSFUL');
+        oldData.push(userData);
+        localStorage.setItem('listUsers', JSON.stringify(oldData));
+        navigate('/admin');
+      } else console.log('Аккаунт уже существует (используйте другой email)');
     } else console.log('Пароли не совпадают');
   }
 
