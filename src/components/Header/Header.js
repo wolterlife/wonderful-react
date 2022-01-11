@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.scss';
 import PropTypes from 'prop-types';
-import SignInLink from '../SignInLink';
+import HeaderLink from '../HeaderLink';
 import BackLink from '../BackLink/BackLink';
 
 const Header = ({ isSignInVisible, isBackLinkVisible }) => {
@@ -9,7 +9,7 @@ const Header = ({ isSignInVisible, isBackLinkVisible }) => {
     <header className="header">
       <div className="header__container">
         <img alt="" className="header__logo" src="img/logo-pizza.png" />
-        {isSignInVisible && <SignInLink />}
+        {isSignInVisible && <HeaderLink />}
         {isBackLinkVisible && <BackLink />}
       </div>
     </header>

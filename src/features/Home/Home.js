@@ -8,6 +8,8 @@ import Header from '../../components/Header';
 import ListOfMenu from './components/ListOfMenu';
 
 const Home = () => {
+  const data = JSON.parse(localStorage.getItem('currentUser'));
+  if (data != null);
   return (
     <>
       <Header isSignInVisible isBackLinkVisible={false} />

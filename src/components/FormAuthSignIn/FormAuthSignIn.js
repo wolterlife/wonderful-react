@@ -11,13 +11,13 @@ const FormAuthSignIn = () => {
   const auth = () => {
     let finded = false;
     let oldData = localStorage.getItem('listUsers');
-
     if (oldData != null) {
       oldData = JSON.parse(oldData);
       // eslint-disable-next-line no-restricted-syntax
       for (const key of oldData) {
         if (email === key.email && password === key.password && email != null && password != null) {
           finded = true;
+          localStorage.setItem('currentUser', JSON.stringify(key));
           navigate('/admin');
         }
       }

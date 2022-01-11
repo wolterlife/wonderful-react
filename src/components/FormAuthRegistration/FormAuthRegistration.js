@@ -45,12 +45,14 @@ const FormAuthRegistration = () => {
       if (oldData != null) oldData = JSON.parse(oldData);
       else oldData = [{}];
 
-      if (isUserUnique(email, oldData)) {
+      if (email.length === 0 || password.length === 0) console.log('Пустое поле');
+      else if (isUserUnique(email, oldData)) {
         console.log('REGISTRATION SUCCESSFUL');
         oldData.push(userData);
-        if (Object.keys(oldData[0]).length === 0) oldData.shift(); // if object empty [0]
+        if (Object.keys(oldData[0]).length === 0) oldData.shift(); // if object empty [0] dell
         userData.id = oldData.length; // create id
         localStorage.setItem('listUsers', JSON.stringify(oldData));
+        localStorage.setItem('currentUser', JSON.stringify(userData));
         navigate('/admin');
       } else console.log('Аккаунт уже существует (используйте другой email)');
     } else console.log('Пароли не совпадают');
