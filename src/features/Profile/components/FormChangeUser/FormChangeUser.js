@@ -67,7 +67,7 @@ const FormChangeUser = () => {
   const dellUser = () => {
     let oldData = localStorage.getItem('listUsers');
     if (oldData != null) oldData = JSON.parse(oldData);
-    oldData.splice(currentData.id - 1, 1);
+    oldData.splice(oldData.indexOf(currentData), 1, {});
     localStorage.setItem('listUsers', JSON.stringify(oldData));
     localStorage.removeItem('currentUser');
     navigate('/');

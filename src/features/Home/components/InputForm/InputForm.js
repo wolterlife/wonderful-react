@@ -4,6 +4,23 @@ import { Button, TextField } from '@mui/material';
 import DateTimePicker from '../../../../components/DateTimePicker';
 
 const InputForm = () => {
+  const data = JSON.parse(localStorage.getItem('currentUser'));
+
+  function checkField(num) {
+    if (data == null) return '';
+    switch (num) {
+      case 1:
+        return data.firstName;
+      case 2:
+        return data.secondName;
+      case 3:
+        return data.address;
+      case 4:
+        return data.phoneNumber;
+      default:
+        return '';
+    }
+  }
   return (
     <form className="form" id="delivery">
       <div className="form__container">
@@ -14,12 +31,14 @@ const InputForm = () => {
             label="Имя"
             variant="filled"
             color="warning"
+            defaultValue={checkField(1)}
           />
           <TextField
             className="form__section__input--short"
             label="Фамилия"
             variant="filled"
             color="warning"
+            defaultValue={checkField(2)}
           />
         </div>
         <div className="form__section">
@@ -29,6 +48,7 @@ const InputForm = () => {
             variant="filled"
             fullWidth
             color="warning"
+            defaultValue={checkField(3)}
           />
         </div>
         <div className="form__section">
@@ -38,6 +58,7 @@ const InputForm = () => {
             fullWidth
             variant="filled"
             color="warning"
+            defaultValue={checkField(4)}
           />
           <TextField
             className="form__section__input--short"

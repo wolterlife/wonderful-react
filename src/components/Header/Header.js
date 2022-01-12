@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import HeaderLink from '../HeaderLink';
 import BackLink from '../BackLink/BackLink';
 
-const Header = ({ isSignInVisible, isBackLinkVisible }) => {
+const Header = ({ isSignInVisible: isHeaderLinkVisible, isBackLinkVisible }) => {
   return (
     <header className="header">
       <div className="header__container">
         <img alt="" className="header__logo" src="img/logo-pizza.png" />
-        {isSignInVisible && <HeaderLink />}
+        {isHeaderLinkVisible && <HeaderLink />}
         {isBackLinkVisible && <BackLink />}
       </div>
     </header>

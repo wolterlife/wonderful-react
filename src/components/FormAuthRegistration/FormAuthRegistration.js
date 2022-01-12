@@ -36,7 +36,16 @@ const FormAuthRegistration = () => {
       if (oldData != null) oldData = JSON.parse(oldData);
       else oldData = [{}];
 
-      if (email.length === 0 || password.length === 0) console.log('Пустое поле');
+      // check empty values
+      if (
+        email.length === 0 ||
+        firstName.length === 0 ||
+        secondName.length === 0 ||
+        address.length === 0 ||
+        phoneNumber.length === 0 ||
+        password.length === 0
+      )
+        console.log('Пустое поле');
       else if (isUserUnique(email, oldData)) {
         console.log('REGISTRATION SUCCESSFUL');
         oldData.push(userData);

@@ -40,6 +40,7 @@ const FormAuthSignIn = () => {
             variant="filled"
             type="email"
             color="warning"
+            fullWidth
           />
         </div>
         <div className="auth-form__section">
@@ -50,6 +51,7 @@ const FormAuthSignIn = () => {
             variant="filled"
             type="password"
             color="warning"
+            fullWidth
           />
         </div>
         <div className="auth-form__section">
