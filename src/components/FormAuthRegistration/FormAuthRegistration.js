@@ -13,15 +13,6 @@ const FormAuthRegistration = () => {
   const [address, setAddress] = React.useState('');
   const [phoneNumber, setPhoneNumber] = React.useState('');
 
-  // function isUserUnique(checkedEmail, allUsers) {
-  //   console.log(allUsers);
-  //   // eslint-disable-next-line no-restricted-syntax
-  //   for (const key of allUsers) {
-  //     if (key.email === checkedEmail && key.email != null) return false;
-  //   }
-  //   return true;
-  // }
-
   const isUserUnique = (checkedEmail, allUsers) => {
     return !allUsers.some(user => user.email === checkedEmail);
   };

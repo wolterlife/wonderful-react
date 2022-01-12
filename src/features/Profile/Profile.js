@@ -2,17 +2,17 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import FormAuthSignIn from '../../components/FormAuthSignIn';
+import FormChangeUser from './components/FormChangeUser';
 
-const SignIn = () => {
-  if (localStorage.getItem('currentUser') !== null) return <Navigate to="/" />;
+const Profile = () => {
+  if (localStorage.getItem('currentUser') == null) return <Navigate to="/" />;
   return (
     <>
       <Header isSignInVisible={false} isBackLinkVisible />
-      <FormAuthSignIn />
+      <FormChangeUser />
       <Footer />
     </>
   );
 };
 
-export default SignIn;
+export default Profile;
