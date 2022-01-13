@@ -28,7 +28,9 @@
   }
 
   &__table__item {
+    margin: auto;
     padding: 4px;
+    max-width: 10vw;
   }
 
   &__table__item__img {
@@ -38,4 +40,10 @@
   &__table__item__button {
     height: 128px;
   }
+}
+
+.table__divider {
+  padding: 4px;
+  background-color: #85B3E0;
+  font-weight: bold;
 }

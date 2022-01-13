@@ -49,7 +49,6 @@ const FormAuthRegistration = () => {
       else if (isUserUnique(email, oldData)) {
         console.log('REGISTRATION SUCCESSFUL');
         oldData.push(userData);
-        if (Object.keys(oldData[0]).length === 0) oldData.shift(); // if object empty [0] dell
         userData.id = oldData.length; // create id
         localStorage.setItem('listUsers', JSON.stringify(oldData));
         localStorage.setItem('currentUser', JSON.stringify(userData));
