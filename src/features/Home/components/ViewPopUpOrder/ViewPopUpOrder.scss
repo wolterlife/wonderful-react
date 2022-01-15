@@ -20,6 +20,10 @@
   border: 2px solid #ff6c00;
   box-shadow: 0 0 10px #000;
   background-color: #dcdcdc;
+
+  &__total {
+    font-size: 16px;
+  }
 }
 
 .top-container {
@@ -32,6 +36,7 @@
     font-weight: bold;
     font-size: 16px;
     color: #1A1A1A;
+    margin: 4px 0;
   }
 }
 
@@ -47,43 +52,6 @@
     font-size: 24px;
     margin-top: 24px;
   }
-
-  &__table {
-    text-align: center;
-    font-family: 'Ruda', sans-serif;
-    border-radius: 4px;
-    background-color: #F0F0F0;
-    color: #000000;
-    border-collapse: collapse;
-    border-style: hidden;
-    box-shadow: 0 0 0 1px #666;
-    //margin: 24px auto;
-  }
-
-  &__table-head {
-    padding: 18px;
-  }
-
-  &__table-item {
-    margin: auto;
-    padding: 4px;
-    max-width: 10vw;
-  }
-
-  &__table-actions {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__table-img {
-    width: 64px;
-  }
-
-  &__table-button--green {
-    background-color: #00ff00;
-  }
-
-  &__table-button--red {
-    background-color: #ff0000;
-  }
 }
+
+

@@ -9,7 +9,7 @@ import MenuTable from './components/MenuTable';
 const Admin = () => {
   return (
     <>
-      <Header isSignInVisible={false} isBackLinkVisible />
+      <Header isHeaderLinkVisible={false} isBackLinkVisible />
       <UserList />
       <RegistrationAndMenuForm />
       <MenuTable />

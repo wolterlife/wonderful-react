@@ -1,12 +1,15 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './InputForm.scss';
 import { Button, TextField } from '@mui/material';
 import DateTimePicker from '../../../../components/DateTimePicker';
-import ViewPopUpOrder from '../../../../components/ViewPopUpOrder';
+import ViewPopUpOrder from '../ViewPopUpOrder';
 
-const InputForm = () => {
+const InputForm = props => {
+  let orderInfo;
   const data = JSON.parse(localStorage.getItem('currentUser'));
   const [isFastDelivery, setFastDelivery] = React.useState(false);
+  const [isPopUpVisible, setPopUpVisible] = React.useState(false);
   const [statusButton, setStatusButton] = React.useState('#232323');
 
   const [firstName, setFirstName] = React.useState(data != null ? data.firstName : '');
@@ -43,7 +46,7 @@ const InputForm = () => {
   };
 
   const openCart = () => {
-    const orderInfo = {
+    orderInfo = {
       firstName,
       secondName,
       address,
@@ -53,6 +56,7 @@ const InputForm = () => {
       time,
     };
     console.log(orderInfo);
+    setPopUpVisible(true);
   };
 
   return (
@@ -154,7 +158,14 @@ const InputForm = () => {
           </span>
         </p>
       </div>
-      <ViewPopUpOrder />
+      {isPopUpVisible && (
+        <ViewPopUpOrder
+          ordInfo={orderInfo}
+          callShow={setPopUpVisible}
+          callCart={props.callCart}
+          cart={props.cart}
+        />
+      )}
     </form>
   );
 };

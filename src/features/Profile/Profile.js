@@ -8,7 +8,7 @@ const Profile = () => {
   if (localStorage.getItem('currentUser') == null) return <Navigate to="/" />;
   return (
     <>
-      <Header isSignInVisible={false} isBackLinkVisible />
+      <Header isHeaderLinkVisible={false} isBackLinkVisible />
       <FormChangeUser />
       <Footer />
     </>

@@ -1,9 +1,13 @@
+/* eslint-disable no-unused-vars,react/prop-types */
 import React from 'react';
 import './ListOfMenu.scss';
+import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 
-const ListOfMenu = () => {
+const ListOfMenu = props => {
   let list;
+  const { cart } = props;
+
   if (localStorage.getItem('list') == null) {
     list = {
       pizza: [
@@ -58,6 +62,41 @@ const ListOfMenu = () => {
     localStorage.setItem('list', JSON.stringify(list));
   } else list = JSON.parse(localStorage.getItem('list'));
 
+  const addToCart = item => {
+    switch (item.type) {
+      case 'Пиццы':
+        if (cart.pizza.includes(item)) cart.pizza[cart.pizza.indexOf(item)].quantity += 1;
+        else {
+          cart.pizza.push(item);
+          cart.pizza[cart.pizza.indexOf(item)].quantity = 1;
+        }
+        break;
+      case 'Напитки':
+        if (cart.drinks.includes(item)) cart.drinks[cart.drinks.indexOf(item)].quantity += 1;
+        else {
+          cart.drinks.push(item);
+          cart.drinks[cart.drinks.indexOf(item)].quantity = 1;
+        }
+        break;
+      case 'Десерты':
+        if (cart.desserts.includes(item)) cart.desserts[cart.desserts.indexOf(item)].quantity += 1;
+        else {
+          cart.desserts.push(item);
+          cart.desserts[cart.desserts.indexOf(item)].quantity = 1;
+        }
+        break;
+      case 'Закуски':
+        if (cart.snacks.includes(item)) cart.snacks[cart.snacks.indexOf(item)].quantity += 1;
+        else {
+          cart.snacks.push(item);
+          cart.snacks[cart.snacks.indexOf(item)].quantity = 1;
+        }
+        break;
+      default:
+    }
+    props.callCart(cart);
+  };
+
   // eslint-disable-next-line array-callback-return,consistent-return
   const resPizza = list.pizza.map(function show(item) {
     if (item.id !== undefined)
@@ -70,7 +109,12 @@ const ListOfMenu = () => {
           </div>
           <div className="card__actions">
             <p className="card__price">{item.price} BYN</p>
-            <Button variant="contained" size="small" color="warning">
+            <Button
+              onClick={() => addToCart(item)}
+              variant="contained"
+              size="small"
+              color="warning"
+            >
               Купить
             </Button>
           </div>
@@ -90,7 +134,12 @@ const ListOfMenu = () => {
           </div>
           <div className="card__actions">
             <p className="card__price">{item.price} BYN</p>
-            <Button variant="contained" size="small" color="warning">
+            <Button
+              onClick={() => addToCart(item)}
+              variant="contained"
+              size="small"
+              color="warning"
+            >
               Купить
             </Button>
           </div>
@@ -110,7 +159,12 @@ const ListOfMenu = () => {
           </div>
           <div className="card__actions">
             <p className="card__price">{item.price} BYN</p>
-            <Button variant="contained" size="small" color="warning">
+            <Button
+              onClick={() => addToCart(item)}
+              variant="contained"
+              size="small"
+              color="warning"
+            >
               Купить
             </Button>
           </div>
@@ -130,7 +184,12 @@ const ListOfMenu = () => {
           </div>
           <div className="card__actions">
             <p className="card__price">{item.price} BYN</p>
-            <Button variant="contained" size="small" color="warning">
+            <Button
+              onClick={() => addToCart(item)}
+              variant="contained"
+              size="small"
+              color="warning"
+            >
               Купить
             </Button>
           </div>
@@ -162,3 +221,7 @@ const ListOfMenu = () => {
 };
 
 export default ListOfMenu;
+
+ListOfMenu.propTypes = {
+  callCart: PropTypes.func.isRequired,
+};

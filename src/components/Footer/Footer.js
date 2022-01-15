@@ -11,7 +11,7 @@ const Footer = () => {
         <a className="footer__link" href="">
           <p>Обратная связь</p>
         </a>
-        <p className="footer__paragraph">NEON PIZZA 2021</p>
+        <p className="footer__paragraph">NEON PIZZA 2021 - 2022</p>
       </div>
       <div className="footer__social-media-block">
         <a className="footer__img-container" href="">

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import HeaderLink from '../HeaderLink';
 import BackLink from '../BackLink/BackLink';
 
-const Header = ({ isSignInVisible: isHeaderLinkVisible, isBackLinkVisible }) => {
+const Header = ({ isHeaderLinkVisible, isBackLinkVisible }) => {
   return (
     <header className="header">
       <div className="header__container">
@@ -19,6 +19,6 @@ const Header = ({ isSignInVisible: isHeaderLinkVisible, isBackLinkVisible }) => 
 export default Header;
 
 Header.propTypes = {
-  isSignInVisible: PropTypes.bool.isRequired,
+  isHeaderLinkVisible: PropTypes.bool.isRequired,
   isBackLinkVisible: PropTypes.bool.isRequired,
 };
