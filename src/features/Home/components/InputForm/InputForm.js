@@ -2,11 +2,31 @@ import React from 'react';
 import './InputForm.scss';
 import { Button, TextField } from '@mui/material';
 import DateTimePicker from '../../../../components/DateTimePicker';
+import ViewPopUpOrder from '../../../../components/ViewPopUpOrder';
 
 const InputForm = () => {
   const data = JSON.parse(localStorage.getItem('currentUser'));
+  const [isFastDelivery, setFastDelivery] = React.useState(false);
+  const [statusButton, setStatusButton] = React.useState('#232323');
 
-  function checkField(num) {
+  const [firstName, setFirstName] = React.useState(data != null ? data.firstName : '');
+  const [secondName, setSecondName] = React.useState(data != null ? data.secondName : '');
+  const [address, setAddress] = React.useState(data != null ? data.address : '');
+  const [phoneNumber, setPhoneNumber] = React.useState(data != null ? data.phoneNumber : '');
+  const [promo, setPromo] = React.useState('');
+  const [time, setTime] = React.useState(Date());
+
+  const fastDelivery = () => {
+    if (isFastDelivery) {
+      setFastDelivery(false);
+      setStatusButton('#232323');
+    } else {
+      setFastDelivery(true);
+      setStatusButton('#653E1D');
+    }
+  };
+
+  const checkField = num => {
     if (data == null) return '';
     switch (num) {
       case 1:
@@ -20,7 +40,21 @@ const InputForm = () => {
       default:
         return '';
     }
-  }
+  };
+
+  const openCart = () => {
+    const orderInfo = {
+      firstName,
+      secondName,
+      address,
+      phoneNumber,
+      promo,
+      isFastDelivery,
+      time,
+    };
+    console.log(orderInfo);
+  };
+
   return (
     <form className="form" id="delivery">
       <div className="form__container">
@@ -32,6 +66,7 @@ const InputForm = () => {
             variant="filled"
             color="warning"
             defaultValue={checkField(1)}
+            onChange={e => setFirstName(e.target.value)}
           />
           <TextField
             className="form__section__input--short"
@@ -39,6 +74,7 @@ const InputForm = () => {
             variant="filled"
             color="warning"
             defaultValue={checkField(2)}
+            onChange={e => setSecondName(e.target.value)}
           />
         </div>
         <div className="form__section">
@@ -49,6 +85,7 @@ const InputForm = () => {
             fullWidth
             color="warning"
             defaultValue={checkField(3)}
+            onChange={e => setAddress(e.target.value)}
           />
         </div>
         <div className="form__section">
@@ -59,6 +96,7 @@ const InputForm = () => {
             variant="filled"
             color="warning"
             defaultValue={checkField(4)}
+            onChange={e => setPhoneNumber(e.target.value)}
           />
           <TextField
             className="form__section__input--short"
@@ -66,24 +104,28 @@ const InputForm = () => {
             fullWidth
             variant="filled"
             color="warning"
+            onChange={e => setPromo(e.target.value)}
           />
         </div>
         <p className="form__title">Дата и время:</p>
         <div className="form__section">
-          <DateTimePicker />
+          <DateTimePicker isDisable={isFastDelivery} callDate={setTime} />
           <Button
             style={{
               borderColor: '#ff7500',
               color: '#ff7500',
+              backgroundColor: statusButton,
             }}
             variant="outlined"
             className="form__button"
+            onClick={fastDelivery}
           >
             Как можно скорее
           </Button>
         </div>
         <div className="form__section">
           <Button
+            onClick={openCart}
             style={{
               borderColor: '#0fff23',
               color: '#0fff23',
@@ -112,6 +154,7 @@ const InputForm = () => {
           </span>
         </p>
       </div>
+      <ViewPopUpOrder />
     </form>
   );
 };
