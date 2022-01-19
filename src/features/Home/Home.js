@@ -16,11 +16,11 @@ const Home = () => {
   return (
     <>
       <Header isHeaderLinkVisible isBackLinkVisible={false} />
-      <ShoppingBasket />
+      <ShoppingBasket cart={cart} total={total} />
       <Slider />
       <NavigationMenu />
-      <ListOfMenu callCart={setCart} cart={cart} />
-      <InputForm callCart={setCart} cart={cart} />
+      <ListOfMenu callCart={setCart} cart={cart} total={total} callTotal={setTotal} />
+      <InputForm callCart={setCart} cart={cart} total={total} callTotal={setTotal} />
       <Footer />
     </>
   );

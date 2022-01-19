@@ -55,7 +55,6 @@ const InputForm = props => {
       isFastDelivery,
       time,
     };
-    console.log(orderInfo);
     setPopUpVisible(true);
   };
 
@@ -154,7 +153,7 @@ const InputForm = props => {
         <p className="form__total-text">
           Итого:
           <span className="form__price">
-            <b id="price">2.50 руб.</b>
+            <b id="price">{Math.abs(props.total).toFixed(2)} руб.</b>
           </span>
         </p>
       </div>
@@ -163,7 +162,9 @@ const InputForm = props => {
           ordInfo={orderInfo}
           callShow={setPopUpVisible}
           callCart={props.callCart}
+          callTotal={props.callTotal}
           cart={props.cart}
+          total={props.total}
         />
       )}
     </form>

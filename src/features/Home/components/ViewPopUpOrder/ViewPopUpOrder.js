@@ -9,20 +9,7 @@ const ViewPopUpOrder = props => {
     id: Date.now(),
     status: 'Не выполнен',
     items: props.cart,
-    total: 0,
   };
-
-  function check() {
-    let sum = 0;
-    for (const key of currentOrder.items.pizza) sum += key.quantity * key.price;
-    for (const key of currentOrder.items.drinks) sum += key.quantity * key.price;
-    for (const key of currentOrder.items.desserts) sum += key.quantity * key.price;
-    for (const key of currentOrder.items.snacks) sum += key.quantity * key.price;
-    currentOrder.total = sum;
-    console.log(currentOrder);
-    console.log(props.cart);
-  }
-  check();
 
   return (
     <div className="PopUpOrder">
@@ -37,7 +24,7 @@ const ViewPopUpOrder = props => {
           />
         </div>
         <hr />
-        <TableOrder order={currentOrder} />
+        <TableOrder order={currentOrder} callTotal={props.callTotal} total={props.total} />
       </div>
     </div>
   );

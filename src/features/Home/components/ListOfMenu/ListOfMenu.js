@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars,react/prop-types */
+/* eslint-disable react/no-unused-prop-types */
 import React from 'react';
 import './ListOfMenu.scss';
 import PropTypes from 'prop-types';
@@ -17,7 +17,7 @@ const ListOfMenu = props => {
           consist: 'Томатный соус, пикантная пепперони, сыр моцарелла',
           img: 'https://i.imgur.com/JOcK5zi.png',
           type: 'Пиццы',
-          price: '2.55',
+          price: 2.55,
         },
         {
           id: 1,
@@ -25,7 +25,7 @@ const ListOfMenu = props => {
           consist: 'Очень много ананасов',
           img: 'https://i.imgur.com/JOcK5zi.png',
           type: 'Пиццы',
-          price: '2.55',
+          price: 2.55,
         },
       ],
       drinks: [
@@ -35,7 +35,7 @@ const ListOfMenu = props => {
           consist: 'Самый святой эликсир из самых необычных компонентов',
           img: 'https://i.imgur.com/JOcK5zi.png',
           type: 'Напитки',
-          price: '6.20',
+          price: 6.2,
         },
       ],
       snacks: [
@@ -45,7 +45,7 @@ const ListOfMenu = props => {
           consist: 'Крылья в хрустящей панировке обжаренные самым лучшим способом',
           img: 'https://i.imgur.com/JOcK5zi.png',
           type: 'Закуски',
-          price: '3.20',
+          price: 3.2,
         },
       ],
       desserts: [
@@ -55,7 +55,7 @@ const ListOfMenu = props => {
           consist: 'Шарики из натуральных продуктов способные менять жизнь',
           img: 'https://i.imgur.com/JOcK5zi.png',
           type: 'Десерты',
-          price: '1.20',
+          price: 1.2,
         },
       ],
     };
@@ -63,31 +63,40 @@ const ListOfMenu = props => {
   } else list = JSON.parse(localStorage.getItem('list'));
 
   const addToCart = item => {
+    let idx = 0;
     switch (item.type) {
       case 'Пиццы':
-        if (cart.pizza.includes(item)) cart.pizza[cart.pizza.indexOf(item)].quantity += 1;
-        else {
+        idx = cart.pizza.findIndex(e => e.title === item.title);
+        if (idx > -1) {
+          cart.pizza[idx].quantity += 1;
+        } else {
           cart.pizza.push(item);
           cart.pizza[cart.pizza.indexOf(item)].quantity = 1;
         }
         break;
       case 'Напитки':
-        if (cart.drinks.includes(item)) cart.drinks[cart.drinks.indexOf(item)].quantity += 1;
-        else {
+        idx = cart.drinks.findIndex(e => e.title === item.title);
+        if (idx > -1) {
+          cart.drinks[idx].quantity += 1;
+        } else {
           cart.drinks.push(item);
           cart.drinks[cart.drinks.indexOf(item)].quantity = 1;
         }
         break;
       case 'Десерты':
-        if (cart.desserts.includes(item)) cart.desserts[cart.desserts.indexOf(item)].quantity += 1;
-        else {
+        idx = cart.desserts.findIndex(e => e.title === item.title);
+        if (idx > -1) {
+          cart.desserts[idx].quantity += 1;
+        } else {
           cart.desserts.push(item);
           cart.desserts[cart.desserts.indexOf(item)].quantity = 1;
         }
         break;
       case 'Закуски':
-        if (cart.snacks.includes(item)) cart.snacks[cart.snacks.indexOf(item)].quantity += 1;
-        else {
+        idx = cart.snacks.findIndex(e => e.title === item.title);
+        if (idx > -1) {
+          cart.snacks[idx].quantity += 1;
+        } else {
           cart.snacks.push(item);
           cart.snacks[cart.snacks.indexOf(item)].quantity = 1;
         }
@@ -95,10 +104,11 @@ const ListOfMenu = props => {
       default:
     }
     props.callCart(cart);
+    props.callTotal(item.price + props.total);
   };
 
   // eslint-disable-next-line array-callback-return,consistent-return
-  const resPizza = list.pizza.map(function show(item) {
+  const resPizza = list.pizza.map(item => {
     if (item.id !== undefined)
       return (
         <div key={item.id} className="card">
@@ -108,7 +118,7 @@ const ListOfMenu = props => {
             <p className="card__consist">{item.consist}</p>
           </div>
           <div className="card__actions">
-            <p className="card__price">{item.price} BYN</p>
+            <p className="card__price">{item.price.toFixed(2)} BYN</p>
             <Button
               onClick={() => addToCart(item)}
               variant="contained"
@@ -123,7 +133,7 @@ const ListOfMenu = props => {
   });
 
   // eslint-disable-next-line array-callback-return,consistent-return
-  const resDrinks = list.drinks.map(function show(item) {
+  const resDrinks = list.drinks.map(item => {
     if (item.id !== undefined)
       return (
         <div key={item.id} className="card">
@@ -133,7 +143,7 @@ const ListOfMenu = props => {
             <p className="card__consist">{item.consist}</p>
           </div>
           <div className="card__actions">
-            <p className="card__price">{item.price} BYN</p>
+            <p className="card__price">{item.price.toFixed(2)} BYN</p>
             <Button
               onClick={() => addToCart(item)}
               variant="contained"
@@ -148,7 +158,7 @@ const ListOfMenu = props => {
   });
 
   // eslint-disable-next-line array-callback-return,consistent-return
-  const resSnacks = list.snacks.map(function show(item) {
+  const resSnacks = list.snacks.map(item => {
     if (item.id !== undefined)
       return (
         <div key={item.id} className="card">
@@ -158,7 +168,7 @@ const ListOfMenu = props => {
             <p className="card__consist">{item.consist}</p>
           </div>
           <div className="card__actions">
-            <p className="card__price">{item.price} BYN</p>
+            <p className="card__price">{item.price.toFixed(2)} BYN</p>
             <Button
               onClick={() => addToCart(item)}
               variant="contained"
@@ -173,7 +183,7 @@ const ListOfMenu = props => {
   });
 
   // eslint-disable-next-line array-callback-return,consistent-return
-  const resDesserts = list.desserts.map(function show(item) {
+  const resDesserts = list.desserts.map(item => {
     if (item.id !== undefined)
       return (
         <div key={item.id} className="card">
@@ -183,7 +193,7 @@ const ListOfMenu = props => {
             <p className="card__consist">{item.consist}</p>
           </div>
           <div className="card__actions">
-            <p className="card__price">{item.price} BYN</p>
+            <p className="card__price">{item.price.toFixed(2)} BYN</p>
             <Button
               onClick={() => addToCart(item)}
               variant="contained"
@@ -224,4 +234,7 @@ export default ListOfMenu;
 
 ListOfMenu.propTypes = {
   callCart: PropTypes.func.isRequired,
+  callTotal: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
+  cart: PropTypes.object.isRequired,
 };

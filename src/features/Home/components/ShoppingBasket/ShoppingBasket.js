@@ -1,10 +1,11 @@
 import React from 'react';
 import './ShoppingBasket.scss';
+import propTypes from 'prop-types';
 
-const ShoppingBasket = () => {
+const ShoppingBasket = props => {
   return (
     <div onClick={() => console.log('CHECKED')} className="shopping-basket">
-      <p className="shopping-basket__text-total">2.50</p>
+      <p className="shopping-basket__text-total">{Math.abs(props.total).toFixed(2)}</p>
       <input
         className="shopping-basket__button"
         alt="Просмотреть корзину"
@@ -16,3 +17,7 @@ const ShoppingBasket = () => {
 };
 
 export default ShoppingBasket;
+
+ShoppingBasket.propTypes = {
+  total: propTypes.number.isRequired,
+};
