@@ -6,7 +6,6 @@ import DateTimePicker from '../../../../components/DateTimePicker';
 import ViewPopUpOrder from '../ViewPopUpOrder';
 
 const InputForm = props => {
-  let orderInfo;
   const data = JSON.parse(localStorage.getItem('currentUser'));
   const [isFastDelivery, setFastDelivery] = React.useState(false);
   const [isPopUpVisible, setPopUpVisible] = React.useState(false);
@@ -19,6 +18,26 @@ const InputForm = props => {
   const [promo, setPromo] = React.useState('');
   const [time, setTime] = React.useState(Date());
 
+  // input fields
+  let orderFields = {
+    firstName,
+    secondName,
+    address,
+    phoneNumber,
+    promo,
+    isFastDelivery,
+    time,
+  };
+
+  // generate new order
+  const currentOrder = {
+    id: Date.now(),
+    ordFields: orderFields,
+    status: 'Не выполнен',
+    items: props.cart,
+  };
+
+  // fastDelivery button
   const fastDelivery = () => {
     if (isFastDelivery) {
       setFastDelivery(false);
@@ -29,6 +48,7 @@ const InputForm = props => {
     }
   };
 
+  // check default fields
   const checkField = num => {
     if (data == null) return '';
     switch (num) {
@@ -45,8 +65,9 @@ const InputForm = props => {
     }
   };
 
+  // show popUp view and take data from input form
   const openCart = () => {
-    orderInfo = {
+    orderFields = {
       firstName,
       secondName,
       address,
@@ -55,7 +76,14 @@ const InputForm = props => {
       isFastDelivery,
       time,
     };
+    props.callOrder(currentOrder);
     setPopUpVisible(true);
+  };
+
+  //
+  const clearCart = () => {
+    props.callTotal(0);
+    props.callCart({ pizza: [], drinks: [], desserts: [], snacks: [] });
   };
 
   return (
@@ -139,6 +167,7 @@ const InputForm = props => {
             Оформить заказ
           </Button>
           <Button
+            onClick={clearCart}
             style={{
               borderColor: '#ff0f0f',
               color: '#ff0f0f',
@@ -159,8 +188,10 @@ const InputForm = props => {
       </div>
       {isPopUpVisible && (
         <ViewPopUpOrder
-          ordInfo={orderInfo}
+          ordFields={orderFields}
           callShow={setPopUpVisible}
+          callOrder={props.callOrder}
+          ordInfo={props.ordInfo}
           callCart={props.callCart}
           callTotal={props.callTotal}
           cart={props.cart}

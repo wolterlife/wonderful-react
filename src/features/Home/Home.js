@@ -11,7 +11,7 @@ import ListOfMenu from './components/ListOfMenu';
 const Home = () => {
   const [total, setTotal] = useState(0);
   const [cart, setCart] = useState({ pizza: [], drinks: [], desserts: [], snacks: [] });
-  const [orderInfo, setOrderInfo] = useState(0);
+  const [orderInfo, setOrderInfo] = useState();
 
   return (
     <>
@@ -20,7 +20,14 @@ const Home = () => {
       <Slider />
       <NavigationMenu />
       <ListOfMenu callCart={setCart} cart={cart} total={total} callTotal={setTotal} />
-      <InputForm callCart={setCart} cart={cart} total={total} callTotal={setTotal} />
+      <InputForm
+        ordInfo={orderInfo}
+        callOrder={setOrderInfo}
+        cart={cart}
+        callCart={setCart}
+        total={total}
+        callTotal={setTotal}
+      />
       <Footer />
     </>
   );

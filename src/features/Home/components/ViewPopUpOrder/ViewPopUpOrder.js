@@ -5,12 +5,6 @@ import PropTypes from 'prop-types';
 import TableOrder from '../TableOrder';
 
 const ViewPopUpOrder = props => {
-  const currentOrder = {
-    id: Date.now(),
-    status: 'Не выполнен',
-    items: props.cart,
-  };
-
   return (
     <div className="PopUpOrder">
       <div className="container">
@@ -24,7 +18,12 @@ const ViewPopUpOrder = props => {
           />
         </div>
         <hr />
-        <TableOrder order={currentOrder} callTotal={props.callTotal} total={props.total} />
+        <TableOrder
+          ordInfo={props.ordInfo}
+          cart={props.cart}
+          callTotal={props.callTotal}
+          total={props.total}
+        />
       </div>
     </div>
   );

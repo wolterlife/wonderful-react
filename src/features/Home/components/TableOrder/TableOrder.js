@@ -4,8 +4,12 @@ import { Button } from '@mui/material';
 import './TableOrder.scss';
 
 const TableOrder = prop => {
+  const acceptFoo = () => {
+    console.log(prop.ordInfo);
+  };
+
   // eslint-disable-next-line array-callback-return,consistent-return
-  const resPizza = prop.order.items.pizza.map(item => {
+  const resPizza = prop.cart.pizza.map(item => {
     const [quantity, setQuantity] = React.useState(item.quantity);
 
     if (item.id !== undefined && quantity !== 0)
@@ -56,7 +60,7 @@ const TableOrder = prop => {
   });
 
   // eslint-disable-next-line array-callback-return,consistent-return
-  const resDrinks = prop.order.items.drinks.map(item => {
+  const resDrinks = prop.cart.drinks.map(item => {
     const [quantity, setQuantity] = React.useState(item.quantity);
 
     if (item.id !== undefined && quantity !== 0)
@@ -107,7 +111,7 @@ const TableOrder = prop => {
   });
 
   // eslint-disable-next-line array-callback-return,consistent-return
-  const resDeserts = prop.order.items.desserts.map(item => {
+  const resDeserts = prop.cart.desserts.map(item => {
     const [quantity, setQuantity] = React.useState(item.quantity);
 
     if (item.id !== undefined && quantity !== 0)
@@ -158,7 +162,7 @@ const TableOrder = prop => {
   });
 
   // eslint-disable-next-line array-callback-return,consistent-return
-  const resSnacks = prop.order.items.snacks.map(item => {
+  const resSnacks = prop.cart.snacks.map(item => {
     const [quantity, setQuantity] = React.useState(item.quantity);
 
     if (item.id !== undefined && quantity !== 0)
@@ -226,7 +230,19 @@ const TableOrder = prop => {
         </tbody>
       </table>
       <hr />
-      <p className="total">Итого: {prop.total.toFixed(2)} </p>
+      <div className="section">
+        <p className="section__total">Итого: {Math.abs(prop.total).toFixed(2)} </p>
+        <Button
+          onClick={acceptFoo}
+          style={{
+            width: 'auto',
+          }}
+          variant="contained"
+          className="form__button"
+        >
+          Подтвердить
+        </Button>
+      </div>
     </>
   );
 };
