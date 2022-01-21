@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import './FormAddMenu.scss';
 import { Button, FormControlLabel, Radio, RadioGroup, TextField } from '@mui/material';
@@ -9,7 +8,7 @@ const FormAddMenu = () => {
   const data = JSON.parse(localStorage.getItem('list'));
   const [type, setType] = React.useState();
   const [title, setTitle] = React.useState();
-  const [price, setPrice] = React.useState();
+  const [price, setPrice] = React.useState(0);
   const [consist, setConsist] = React.useState();
   const [img, setImg] = React.useState();
 
@@ -29,21 +28,25 @@ const FormAddMenu = () => {
     // add new item in menu
     switch (type) {
       case 'Пиццы':
+        currentItem.price = Number(currentItem.price);
         data.pizza.push(currentItem);
         localStorage.setItem('list', JSON.stringify(data));
         navigate('/admin');
         break;
       case 'Напитки':
+        currentItem.price = Number(currentItem.price);
         data.drinks.push(currentItem);
         localStorage.setItem('list', JSON.stringify(data));
         navigate('/admin');
         break;
       case 'Десерты':
+        currentItem.price = Number(currentItem.price);
         data.desserts.push(currentItem);
         localStorage.setItem('list', JSON.stringify(data));
         navigate('/admin');
         break;
       case 'Закуски':
+        currentItem.price = Number(currentItem.price);
         data.snacks.push(currentItem);
         localStorage.setItem('list', JSON.stringify(data));
         navigate('/admin');

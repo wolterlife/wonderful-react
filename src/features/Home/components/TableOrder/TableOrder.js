@@ -1,11 +1,25 @@
-/* eslint-disable no-param-reassign,react-hooks/rules-of-hooks,no-restricted-syntax */
+/* eslint-disable react-hooks/rules-of-hooks,no-param-reassign */
 import React from 'react';
 import { Button } from '@mui/material';
 import './TableOrder.scss';
+import { useNavigate } from 'react-router-dom';
 
 const TableOrder = prop => {
+  const navigate = useNavigate();
+
   const acceptFoo = () => {
     console.log(prop.ordInfo);
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser != null) {
+      currentUser.orderHistory.push(prop.ordInfo); // order history local currentUser
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    }
+  };
+  // добавить change all user list
+
+  const goToInputFields = () => {
+    prop.callPopUp(false);
+    navigate('#delivery');
   };
 
   // eslint-disable-next-line array-callback-return,consistent-return
@@ -42,11 +56,9 @@ const TableOrder = prop => {
                 backgroundColor: '#707070',
               }}
               onClick={() => {
-                if (quantity !== 0) {
-                  setQuantity(quantity - 1);
-                  item.quantity = quantity - 1;
-                  prop.callTotal(prop.total - item.price);
-                }
+                setQuantity(quantity - 1);
+                item.quantity = quantity - 1;
+                prop.callTotal(prop.total - item.price);
               }}
               className="order-table__button--red"
               type="button"
@@ -93,11 +105,9 @@ const TableOrder = prop => {
                 backgroundColor: '#707070',
               }}
               onClick={() => {
-                if (quantity !== 0) {
-                  setQuantity(quantity - 1);
-                  item.quantity = quantity - 1;
-                  prop.callTotal(prop.total - item.price);
-                }
+                setQuantity(quantity - 1);
+                item.quantity = quantity - 1;
+                prop.callTotal(prop.total - item.price);
               }}
               className="order-table__button--red"
               type="button"
@@ -144,11 +154,9 @@ const TableOrder = prop => {
                 backgroundColor: '#707070',
               }}
               onClick={() => {
-                if (quantity !== 0) {
-                  setQuantity(quantity - 1);
-                  item.quantity = quantity - 1;
-                  prop.callTotal(prop.total - item.price);
-                }
+                setQuantity(quantity - 1);
+                item.quantity = quantity - 1;
+                prop.callTotal(prop.total - item.price);
               }}
               className="order-table__button--red"
               type="button"
@@ -195,11 +203,9 @@ const TableOrder = prop => {
                 backgroundColor: '#707070',
               }}
               onClick={() => {
-                if (quantity !== 0) {
-                  setQuantity(quantity - 1);
-                  item.quantity = quantity - 1;
-                  prop.callTotal(prop.total - item.price);
-                }
+                setQuantity(quantity - 1);
+                item.quantity = quantity - 1;
+                prop.callTotal(prop.total - item.price);
               }}
               className="order-table__button--red"
               type="button"
@@ -232,16 +238,22 @@ const TableOrder = prop => {
       <hr />
       <div className="section">
         <p className="section__total">Итого: {Math.abs(prop.total).toFixed(2)} </p>
-        <Button
-          onClick={acceptFoo}
-          style={{
-            width: 'auto',
-          }}
-          variant="contained"
-          className="form__button"
-        >
-          Подтвердить
-        </Button>
+        {prop.ordInfo !== undefined ? (
+          <Button
+            onClick={acceptFoo}
+            style={{
+              width: 'auto',
+            }}
+            variant="contained"
+            className="section__button"
+          >
+            Оплатить
+          </Button>
+        ) : (
+          <a href="#delivery" onClick={goToInputFields} className="section__button">
+            Заполнить данные о доставке
+          </a>
+        )}
       </div>
     </>
   );

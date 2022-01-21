@@ -12,15 +12,23 @@ const Home = () => {
   const [total, setTotal] = useState(0);
   const [cart, setCart] = useState({ pizza: [], drinks: [], desserts: [], snacks: [] });
   const [orderInfo, setOrderInfo] = useState();
+  const [isPopUpVisible, setPopUpVisible] = React.useState(false);
 
   return (
     <>
       <Header isHeaderLinkVisible isBackLinkVisible={false} />
-      <ShoppingBasket cart={cart} total={total} />
+      <ShoppingBasket
+        cart={cart}
+        total={total}
+        isPopUpVisible={isPopUpVisible}
+        callPopUp={setPopUpVisible}
+      />
       <Slider />
       <NavigationMenu />
       <ListOfMenu callCart={setCart} cart={cart} total={total} callTotal={setTotal} />
       <InputForm
+        isPopUpVisible={isPopUpVisible}
+        callPopUp={setPopUpVisible}
         ordInfo={orderInfo}
         callOrder={setOrderInfo}
         cart={cart}

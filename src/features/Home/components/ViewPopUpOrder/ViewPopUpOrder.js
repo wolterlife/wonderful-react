@@ -18,12 +18,15 @@ const ViewPopUpOrder = props => {
           />
         </div>
         <hr />
-        <TableOrder
-          ordInfo={props.ordInfo}
-          cart={props.cart}
-          callTotal={props.callTotal}
-          total={props.total}
-        />
+        {props.orderAvaible && (
+          <TableOrder
+            callPopUp={props.callShow}
+            ordInfo={props.ordInfo}
+            cart={props.cart}
+            callTotal={props.callTotal}
+            total={props.total}
+          />
+        )}
       </div>
     </div>
   );

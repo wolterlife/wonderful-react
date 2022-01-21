@@ -8,7 +8,6 @@ import ViewPopUpOrder from '../ViewPopUpOrder';
 const InputForm = props => {
   const data = JSON.parse(localStorage.getItem('currentUser'));
   const [isFastDelivery, setFastDelivery] = React.useState(false);
-  const [isPopUpVisible, setPopUpVisible] = React.useState(false);
   const [statusButton, setStatusButton] = React.useState('#232323');
 
   const [firstName, setFirstName] = React.useState(data != null ? data.firstName : '');
@@ -77,7 +76,7 @@ const InputForm = props => {
       time,
     };
     props.callOrder(currentOrder);
-    setPopUpVisible(true);
+    props.callPopUp(true);
   };
 
   //
@@ -186,10 +185,11 @@ const InputForm = props => {
           </span>
         </p>
       </div>
-      {isPopUpVisible && (
+      {props.isPopUpVisible && (
         <ViewPopUpOrder
+          orderAvaible
           ordFields={orderFields}
-          callShow={setPopUpVisible}
+          callShow={props.callPopUp}
           callOrder={props.callOrder}
           ordInfo={props.ordInfo}
           callCart={props.callCart}
