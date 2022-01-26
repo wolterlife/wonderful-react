@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import './InputForm.scss';
 import { Button, TextField } from '@mui/material';
+import propTypes from 'prop-types';
 import DateTimePicker from '../../../../components/DateTimePicker';
 import ViewPopUpOrder from '../ViewPopUpOrder';
 
@@ -203,3 +203,14 @@ const InputForm = props => {
 };
 
 export default InputForm;
+
+InputForm.propTypes = {
+  isPopUpVisible: propTypes.bool.isRequired,
+  callPopUp: propTypes.func.isRequired,
+  callOrder: propTypes.func.isRequired,
+  ordInfo: propTypes.object.isRequired,
+  callCart: propTypes.func.isRequired,
+  callTotal: propTypes.func.isRequired,
+  cart: propTypes.object.isRequired,
+  total: propTypes.number.isRequired,
+};

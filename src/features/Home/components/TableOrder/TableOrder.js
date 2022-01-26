@@ -6,16 +6,28 @@ import { useNavigate } from 'react-router-dom';
 
 const TableOrder = prop => {
   const navigate = useNavigate();
+  let orders = [];
 
   const acceptFoo = () => {
     console.log(prop.ordInfo);
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser != null) {
-      currentUser.orderHistory.push(prop.ordInfo); // order history local currentUser
+      // order history local currentUser
+      currentUser.orderHistory.push(prop.ordInfo);
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
+      // order history all users
+      const users = JSON.parse(localStorage.getItem('listUsers'));
+      users[currentUser.id - 1].orderHistory.push(prop.ordInfo);
+      localStorage.setItem('listUsers', JSON.stringify(users));
+      // order list (server in the future)
+      if (JSON.parse(localStorage.getItem('orders')) === null) {
+        localStorage.setItem('orders', JSON.stringify(orders));
+      }
+      orders = JSON.parse(localStorage.getItem('orders'));
+      orders.push(prop.ordInfo);
+      localStorage.setItem('orders', JSON.stringify(orders));
     }
   };
-  // добавить change all user list
 
   const goToInputFields = () => {
     prop.callPopUp(false);

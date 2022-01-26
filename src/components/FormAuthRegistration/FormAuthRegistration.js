@@ -4,6 +4,11 @@ import { Button, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const FormAuthRegistration = () => {
+  const LOCAL_STORAGE_KEYS = {
+    CURRENT_USER: 'currentUser',
+    LIST_USERS: 'listUsers',
+  };
+
   const navigate = useNavigate();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -32,7 +37,7 @@ const FormAuthRegistration = () => {
       };
 
       // if user first create template for user
-      let oldData = localStorage.getItem('listUsers');
+      let oldData = localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_USERS);
       if (oldData != null) oldData = JSON.parse(oldData);
       else oldData = [{}];
 
@@ -50,8 +55,8 @@ const FormAuthRegistration = () => {
         console.log('REGISTRATION SUCCESSFUL');
         oldData.push(userData);
         userData.id = oldData.length; // create id
-        localStorage.setItem('listUsers', JSON.stringify(oldData));
-        localStorage.setItem('currentUser', JSON.stringify(userData));
+        localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_USERS, JSON.stringify(oldData));
+        localStorage.setItem(LOCAL_STORAGE_KEYS.CURRENT_USER, JSON.stringify(userData));
         navigate('/admin');
       } else console.log('Аккаунт уже существует (используйте другой email)');
     } else console.log('Пароли не совпадают');

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types,no-restricted-syntax */
 import React from 'react';
 import './ViewPopUpOrder.scss';
 import PropTypes from 'prop-types';
@@ -34,6 +33,11 @@ const ViewPopUpOrder = props => {
 
 ViewPopUpOrder.propTypes = {
   callShow: PropTypes.func.isRequired,
+  orderAvaible: PropTypes.bool.isRequired,
+  ordInfo: PropTypes.object.isRequired,
+  cart: PropTypes.object.isRequired,
+  callTotal: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
 };
 
 export default ViewPopUpOrder;

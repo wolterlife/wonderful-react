@@ -4,25 +4,52 @@ import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 
 const ListOfMenu = props => {
-  let list;
+  const LOCAL_STORAGE_KEYS = {
+    LIST_OF_MENU: 'list',
+  };
   const { cart } = props;
+  let list;
 
-  if (localStorage.getItem('list') == null) {
+  if (localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU) == null) {
     list = {
       pizza: [
         {
           id: 0,
           title: 'Пеперони',
           consist: 'Томатный соус, пикантная пепперони, сыр моцарелла',
-          img: 'https://i.imgur.com/JOcK5zi.png',
+          img: 'https://i.imgur.com/pqhMsLg.png',
           type: 'Пиццы',
           price: 2.55,
         },
         {
           id: 1,
           title: 'Гавайская',
-          consist: 'Очень много ананасов',
-          img: 'https://i.imgur.com/JOcK5zi.png',
+          consist: 'Очень много кукурузы и ананасов',
+          img: 'https://i.imgur.com/QIB8pPB.png',
+          type: 'Пиццы',
+          price: 2.55,
+        },
+        {
+          id: 5,
+          title: 'Барбекю',
+          consist: 'Острые колбаски, перец халапеньо, соус барбекю',
+          img: 'https://i.imgur.com/EvNLHGQ.png',
+          type: 'Пиццы',
+          price: 2.55,
+        },
+        {
+          id: 6,
+          title: 'Мексиканская',
+          consist: 'Колбаски, кукуруза, сыр, помидоры',
+          img: 'https://i.imgur.com/nmLwzJ2.png',
+          type: 'Пиццы',
+          price: 2.55,
+        },
+        {
+          id: 11,
+          title: 'Мексиканская',
+          consist: 'Колбаски, кукуруза, сыр, помидоры',
+          img: 'https://i.imgur.com/nmLwzJ2.png',
           type: 'Пиццы',
           price: 2.55,
         },
@@ -32,15 +59,39 @@ const ListOfMenu = props => {
           id: 2,
           title: 'Святой эликсир',
           consist: 'Самый святой эликсир из самых необычных компонентов',
-          img: 'https://i.imgur.com/JOcK5zi.png',
+          img: 'https://i.imgur.com/BbW6cR4.png',
+          type: 'Напитки',
+          price: 6.2,
+        },
+        {
+          id: 7,
+          title: 'Вода',
+          consist: 'Самая простая вода',
+          img: 'https://i.imgur.com/BbW6cR4.png',
           type: 'Напитки',
           price: 6.2,
         },
       ],
       snacks: [
         {
+          id: 8,
+          title: 'Левая палочка твикс',
+          consist: 'Крылья в хрустящей панировке обжаренные самым лучшим способом',
+          img: 'https://i.imgur.com/JOcK5zi.png',
+          type: 'Закуски',
+          price: 3.2,
+        },
+        {
           id: 3,
           title: 'Сочные куриные крылья',
+          consist: 'Крылья в хрустящей панировке обжаренные самым лучшим способом',
+          img: 'https://i.imgur.com/JOcK5zi.png',
+          type: 'Закуски',
+          price: 3.2,
+        },
+        {
+          id: 9,
+          title: 'Правая палочка твикс',
           consist: 'Крылья в хрустящей панировке обжаренные самым лучшим способом',
           img: 'https://i.imgur.com/JOcK5zi.png',
           type: 'Закуски',
@@ -50,16 +101,32 @@ const ListOfMenu = props => {
       desserts: [
         {
           id: 4,
-          title: 'Мороженное',
+          title: 'Мороженное рожок',
           consist: 'Шарики из натуральных продуктов способные менять жизнь',
-          img: 'https://i.imgur.com/JOcK5zi.png',
+          img: 'https://i.imgur.com/x6zA4ko.png',
           type: 'Десерты',
-          price: 1.2,
+          price: 1,
+        },
+        {
+          id: 12,
+          title: 'Мороженное фисташковое',
+          consist: 'Шарики из натуральных продуктов способные менять жизнь',
+          img: 'https://i.imgur.com/4Ei7cMX.png',
+          type: 'Десерты',
+          price: 2.1,
+        },
+        {
+          id: 13,
+          title: 'Мороженное в глазури',
+          consist: 'Шарики из натуральных продуктов способные менять жизнь',
+          img: 'https://i.imgur.com/LK43Evt.png',
+          type: 'Десерты',
+          price: 2.6,
         },
       ],
     };
-    localStorage.setItem('list', JSON.stringify(list));
-  } else list = JSON.parse(localStorage.getItem('list'));
+    localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU, JSON.stringify(list));
+  } else list = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU));
 
   const addToCart = item => {
     let idx = 0;

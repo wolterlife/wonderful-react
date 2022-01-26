@@ -4,13 +4,17 @@ import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const UserList = () => {
-  let data = localStorage.getItem('listUsers');
+  const LOCAL_STORAGE_KEYS = {
+    LIST_USERS: 'listUsers',
+  };
+
+  let data = localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_USERS);
   data = JSON.parse(data);
   const navigate = useNavigate();
 
   const dellUser = user => {
     data.splice(data.indexOf(user), 1, {});
-    localStorage.setItem('listUsers', JSON.stringify(data));
+    localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_USERS, JSON.stringify(data));
     navigate('/admin'); // new render
   };
 

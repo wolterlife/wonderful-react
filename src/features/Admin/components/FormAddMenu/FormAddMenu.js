@@ -4,8 +4,12 @@ import { Button, FormControlLabel, Radio, RadioGroup, TextField } from '@mui/mat
 import { useNavigate } from 'react-router-dom';
 
 const FormAddMenu = () => {
+  const LOCAL_STORAGE_KEYS = {
+    LIST_OF_MENU: 'list',
+  };
+
   const navigate = useNavigate();
-  const data = JSON.parse(localStorage.getItem('list'));
+  const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU));
   const [type, setType] = React.useState();
   const [title, setTitle] = React.useState();
   const [price, setPrice] = React.useState(0);
@@ -30,25 +34,25 @@ const FormAddMenu = () => {
       case 'Пиццы':
         currentItem.price = Number(currentItem.price);
         data.pizza.push(currentItem);
-        localStorage.setItem('list', JSON.stringify(data));
+        localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU, JSON.stringify(data));
         navigate('/admin');
         break;
       case 'Напитки':
         currentItem.price = Number(currentItem.price);
         data.drinks.push(currentItem);
-        localStorage.setItem('list', JSON.stringify(data));
+        localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU, JSON.stringify(data));
         navigate('/admin');
         break;
       case 'Десерты':
         currentItem.price = Number(currentItem.price);
         data.desserts.push(currentItem);
-        localStorage.setItem('list', JSON.stringify(data));
+        localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU, JSON.stringify(data));
         navigate('/admin');
         break;
       case 'Закуски':
         currentItem.price = Number(currentItem.price);
         data.snacks.push(currentItem);
-        localStorage.setItem('list', JSON.stringify(data));
+        localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU, JSON.stringify(data));
         navigate('/admin');
         break;
       default:

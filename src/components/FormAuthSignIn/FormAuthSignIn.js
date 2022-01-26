@@ -4,20 +4,25 @@ import { Button, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const FormAuthSignIn = () => {
+  const LOCAL_STORAGE_KEYS = {
+    CURRENT_USER: 'currentUser',
+    LIST_USERS: 'listUsers',
+  };
+
   const navigate = useNavigate();
   const [email, setEmail] = React.useState();
   const [password, setPassword] = React.useState();
 
   const auth = () => {
     let finded = false;
-    let oldData = localStorage.getItem('listUsers');
+    let oldData = localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_USERS);
     if (oldData != null) {
       oldData = JSON.parse(oldData);
       // eslint-disable-next-line no-restricted-syntax
       for (const key of oldData) {
         if (email === key.email && password === key.password && email != null && password != null) {
           finded = true;
-          localStorage.setItem('currentUser', JSON.stringify(key));
+          localStorage.setItem(LOCAL_STORAGE_KEYS.CURRENT_USER, JSON.stringify(key));
           navigate('/admin');
         }
       }

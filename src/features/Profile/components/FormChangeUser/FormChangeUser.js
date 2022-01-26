@@ -4,8 +4,13 @@ import { Button, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const FormChangeUser = () => {
+  const LOCAL_STORAGE_KEYS = {
+    CURRENT_USER: 'currentUser',
+    LIST_USERS: 'listUsers',
+  };
+
   const navigate = useNavigate();
-  const currentData = JSON.parse(localStorage.getItem('currentUser'));
+  const currentData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.CURRENT_USER));
   const [email, setEmail] = React.useState(currentData.email);
   const [password, setPassword] = React.useState('');
   const [checkPassword, setCheckPassword] = React.useState('');
@@ -15,27 +20,27 @@ const FormChangeUser = () => {
   const [phoneNumber, setPhoneNumber] = React.useState(currentData.phoneNumber);
 
   const isUserUnique = checkedEmail => {
-    let oldData = localStorage.getItem('listUsers');
+    let oldData = localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_USERS);
     if (oldData != null) oldData = JSON.parse(oldData);
     if (currentData.email !== email) return !oldData.some(user => user.email === checkedEmail);
     return true;
   };
 
   const exitUser = () => {
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem(LOCAL_STORAGE_KEYS.CURRENT_USER);
     navigate('/');
   };
 
   const replaceUser = () => {
-    let oldData = localStorage.getItem('listUsers');
+    let oldData = localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_USERS);
     if (oldData != null) oldData = JSON.parse(oldData);
     currentData.firstName = firstName;
     currentData.secondName = secondName;
     currentData.address = address;
     currentData.phoneNumber = phoneNumber;
     oldData[currentData.id - 1] = currentData;
-    localStorage.setItem('currentUser', JSON.stringify(currentData));
-    localStorage.setItem('listUsers', JSON.stringify(oldData));
+    localStorage.setItem(LOCAL_STORAGE_KEYS.CURRENT_USER, JSON.stringify(currentData));
+    localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_USERS, JSON.stringify(oldData));
   };
 
   const changeUser = () => {
@@ -65,11 +70,11 @@ const FormChangeUser = () => {
   };
 
   const dellUser = () => {
-    let oldData = localStorage.getItem('listUsers');
+    let oldData = localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_USERS);
     if (oldData != null) oldData = JSON.parse(oldData);
     oldData.splice(oldData.indexOf(currentData), 1, {});
-    localStorage.setItem('listUsers', JSON.stringify(oldData));
-    localStorage.removeItem('currentUser');
+    localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_USERS, JSON.stringify(oldData));
+    localStorage.removeItem(LOCAL_STORAGE_KEYS.CURRENT_USER);
     navigate('/');
   };
 
