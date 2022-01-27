@@ -29,6 +29,10 @@
 
   &__table-item {
     padding: 4px;
+
+    &--status {
+      width: 100px;
+    }
   }
 
   &__table-fast {

@@ -15,18 +15,18 @@ const TableOrder = prop => {
       // order history local currentUser
       currentUser.orderHistory.push(prop.ordInfo);
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
-      // order history all users
+      // order history local all users
       const users = JSON.parse(localStorage.getItem('listUsers'));
       users[currentUser.id - 1].orderHistory.push(prop.ordInfo);
       localStorage.setItem('listUsers', JSON.stringify(users));
-      // order list (server in the future)
-      if (JSON.parse(localStorage.getItem('orders')) === null) {
-        localStorage.setItem('orders', JSON.stringify(orders));
-      }
-      orders = JSON.parse(localStorage.getItem('orders'));
-      orders.push(prop.ordInfo);
+    }
+    // order list (server in the future)
+    if (JSON.parse(localStorage.getItem('orders')) === null) {
       localStorage.setItem('orders', JSON.stringify(orders));
     }
+    orders = JSON.parse(localStorage.getItem('orders'));
+    orders.push(prop.ordInfo);
+    localStorage.setItem('orders', JSON.stringify(orders));
   };
 
   const goToInputFields = () => {
