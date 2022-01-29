@@ -2,44 +2,27 @@
 import React, { useEffect, useState } from 'react';
 import './OrderList.scss';
 import { Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import PopUpPersonInfo from '../PopUpPersonInfo';
 import PopUpOrderInfo from '../PopUpOrderInfo';
-import { database, ref, get } from '../../../../util/firebase';
+// eslint-disable-next-line import/named
+import { database, ref, onValue, set } from '../../../../util/firebase';
 
 const OrderList = () => {
-  const LOCAL_STORAGE_KEYS = {
-    LIST_ORDERS: 'orders',
-  };
   const [isShowPersonInfo, setPersonInfoVisible] = useState(false);
   const [isShowOrderInfo, setOrderInfoVisible] = useState(false);
   const [currentClient, setClient] = useState();
+  const [data, setData] = useState([]);
 
   // get data from firebase
-  let data = [];
-
-  function getData() {
-    get(ref(database, 'orders/'))
-      .then(snapshot => {
-        if (snapshot.exists()) {
-          data = Object.values(snapshot.val());
-          console.log(data);
-        } else {
-          console.log('no data');
-        }
-      })
-      .catch(error => console.log(error));
-  }
-  getData();
-  //
-  // if (JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_ORDERS)) !== null)
-  //   data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_ORDERS));
-  const navigate = useNavigate();
+  useEffect(() => {
+    onValue(ref(database, 'orders/'), snapshot => {
+      if (snapshot.val() !== null) setData(Object.values(snapshot.val()));
+    });
+  }, []);
 
   const dellOrder = item => {
     data.splice(data.indexOf(item), 1);
-    localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_ORDERS, JSON.stringify(data));
-    navigate('/admin'); // new render
+    set(ref(database, 'orders/'), data);
   };
 
   const changeStatus = item => {
@@ -60,10 +43,9 @@ const OrderList = () => {
         break;
       default:
     }
-    navigate('/admin');
     // save data
     data[data.indexOf(oldItem)].status = newStatus;
-    localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_ORDERS, JSON.stringify(data));
+    set(ref(database, 'orders/'), data);
   };
 
   // eslint-disable-next-line no-loop-func,array-callback-return,consistent-return

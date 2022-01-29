@@ -6,9 +6,9 @@ const PopUpPersonalInfo = ({ callShow, client }) => {
   const type = ['pizza', 'drinks', 'desserts', 'snacks'];
   const res = [];
 
-  for (let i = 0; i < type.length; i++)
+  for (let i = 0; i < type.length; i++) {
     // eslint-disable-next-line array-callback-return,consistent-return
-    res[i] = client.items[type[i]].map(item => {
+    res[i] = client.items[type[i]]?.map(item => {
       if (item.quantity > 0)
         return (
           <p key={item.title}>
@@ -16,6 +16,7 @@ const PopUpPersonalInfo = ({ callShow, client }) => {
           </p>
         );
     });
+  }
 
   return (
     <div className="PopUpPersonalInfo">
