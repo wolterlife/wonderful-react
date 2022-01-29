@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './OrderList.scss';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import PopUpPersonInfo from '../PopUpPersonInfo';
 import PopUpOrderInfo from '../PopUpOrderInfo';
+import { database, ref, get } from '../../../../util/firebase';
 
 const OrderList = () => {
   const LOCAL_STORAGE_KEYS = {
@@ -14,9 +15,25 @@ const OrderList = () => {
   const [isShowOrderInfo, setOrderInfoVisible] = useState(false);
   const [currentClient, setClient] = useState();
 
+  // get data from firebase
   let data = [];
-  if (JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_ORDERS)) !== null)
-    data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_ORDERS));
+
+  function getData() {
+    get(ref(database, 'orders/'))
+      .then(snapshot => {
+        if (snapshot.exists()) {
+          data = Object.values(snapshot.val());
+          console.log(data);
+        } else {
+          console.log('no data');
+        }
+      })
+      .catch(error => console.log(error));
+  }
+  getData();
+  //
+  // if (JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_ORDERS)) !== null)
+  //   data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.LIST_ORDERS));
   const navigate = useNavigate();
 
   const dellOrder = item => {
@@ -49,7 +66,7 @@ const OrderList = () => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_ORDERS, JSON.stringify(data));
   };
 
-  // eslint-disable-next-line array-callback-return,consistent-return
+  // eslint-disable-next-line no-loop-func,array-callback-return,consistent-return
   const res = data.map(item => {
     if (item.id !== undefined)
       return (

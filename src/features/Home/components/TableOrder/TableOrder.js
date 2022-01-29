@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/rules-of-hooks,no-param-reassign */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import './TableOrder.scss';
-import { useNavigate } from 'react-router-dom';
+import { database, ref, push } from '../../../../util/firebase';
 
 const TableOrder = prop => {
   const navigate = useNavigate();
   let orders = [];
 
   const acceptFoo = () => {
-    console.log(prop.ordInfo);
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser != null) {
       // order history local currentUser
@@ -27,6 +27,9 @@ const TableOrder = prop => {
     orders = JSON.parse(localStorage.getItem('orders'));
     orders.push(prop.ordInfo);
     localStorage.setItem('orders', JSON.stringify(orders));
+    // firebase
+    push(ref(database, `orders/`), prop.ordInfo);
+    prop.callPopUp(false);
   };
 
   const goToInputFields = () => {
