@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './OrderList.scss';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import PopUpPersonInfo from '../PopUpPersonInfo';
 import PopUpOrderInfo from '../PopUpOrderInfo';
 // eslint-disable-next-line import/named
@@ -12,7 +13,7 @@ const OrderList = () => {
   const [isShowOrderInfo, setOrderInfoVisible] = useState(false);
   const [currentClient, setClient] = useState();
   const [data, setData] = useState([]);
-
+  const navigate = useNavigate();
   // get data from firebase
   useEffect(() => {
     onValue(ref(database, 'orders/'), snapshot => {
@@ -23,6 +24,7 @@ const OrderList = () => {
   const dellOrder = item => {
     data.splice(data.indexOf(item), 1);
     set(ref(database, 'orders/'), data);
+    navigate('/admin');
   };
 
   const changeStatus = item => {
