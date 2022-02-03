@@ -15,16 +15,16 @@ const Footer = () => {
         <p className="footer__paragraph">NEON PIZZA 2021 - 2022</p>
       </div>
       <div className="footer__social-media-block">
-        <Link to="/wonderful-react/admin" className="footer__img-container" href="">
+        <Link to="/wonderful-react/admin/" className="footer__img-container" href="">
           <img className="footer__img" src="img/footer/facebook.png" alt="facebook" />
         </Link>
-        <Link to="/wonderful-react/admin" className="footer__img-container" href="">
+        <Link to="/wonderful-react/admin/" className="footer__img-container" href="">
           <img className="footer__img" src="img/footer/instagram.png" alt="instagram" />
         </Link>
-        <Link to="/wonderful-react/admin" className="footer__img-container" href="">
+        <Link to="/wonderful-react/admin/" className="footer__img-container" href="">
           <img className="footer__img" src="img/footer/twitter.png" alt="twitter" />
         </Link>
-        <Link to="/wonderful-react/admin" className="footer__img-container" href="">
+        <Link to="/wonderful-react/admin/" className="footer__img-container" href="">
           <img className="footer__img" src="img/footer/youtube.png" alt="youtube" />
         </Link>
       </div>
