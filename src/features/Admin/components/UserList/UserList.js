@@ -19,7 +19,7 @@ const UserList = () => {
   const dellUser = user => {
     data.splice(data.indexOf(user), 1, {});
     localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_USERS, JSON.stringify(data));
-    navigate('/admin'); // new render
+    navigate('/wonderful-react/admin'); // new render
   };
 
   // eslint-disable-next-line array-callback-return,consistent-return

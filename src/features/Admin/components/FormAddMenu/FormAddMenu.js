@@ -35,25 +35,25 @@ const FormAddMenu = () => {
         currentItem.price = Number(currentItem.price);
         data.pizza.push(currentItem);
         localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU, JSON.stringify(data));
-        navigate('/admin');
+        navigate('/wonderful-react/admin');
         break;
       case 'Напитки':
         currentItem.price = Number(currentItem.price);
         data.drinks.push(currentItem);
         localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU, JSON.stringify(data));
-        navigate('/admin');
+        navigate('/wonderful-react/admin');
         break;
       case 'Десерты':
         currentItem.price = Number(currentItem.price);
         data.desserts.push(currentItem);
         localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU, JSON.stringify(data));
-        navigate('/admin');
+        navigate('/wonderful-react/admin');
         break;
       case 'Закуски':
         currentItem.price = Number(currentItem.price);
         data.snacks.push(currentItem);
         localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_OF_MENU, JSON.stringify(data));
-        navigate('/admin');
+        navigate('/wonderful-react/admin');
         break;
       default:
         console.log('Не выбрано');

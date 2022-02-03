@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.scss';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -14,18 +15,18 @@ const Footer = () => {
         <p className="footer__paragraph">NEON PIZZA 2021 - 2022</p>
       </div>
       <div className="footer__social-media-block">
-        <a className="footer__img-container" href="">
+        <Link to="/wonderful-react/admin" className="footer__img-container" href="">
           <img className="footer__img" src="img/footer/facebook.png" alt="facebook" />
-        </a>
-        <a className="footer__img-container" href="">
+        </Link>
+        <Link to="/wonderful-react/admin" className="footer__img-container" href="">
           <img className="footer__img" src="img/footer/instagram.png" alt="instagram" />
-        </a>
-        <a className="footer__img-container" href="">
+        </Link>
+        <Link to="/wonderful-react/admin" className="footer__img-container" href="">
           <img className="footer__img" src="img/footer/twitter.png" alt="twitter" />
-        </a>
-        <a className="footer__img-container" href="">
+        </Link>
+        <Link to="/wonderful-react/admin" className="footer__img-container" href="">
           <img className="footer__img" src="img/footer/youtube.png" alt="youtube" />
-        </a>
+        </Link>
       </div>
     </footer>
   );

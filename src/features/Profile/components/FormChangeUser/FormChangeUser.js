@@ -28,7 +28,7 @@ const FormChangeUser = () => {
 
   const exitUser = () => {
     localStorage.removeItem(LOCAL_STORAGE_KEYS.CURRENT_USER);
-    navigate('/');
+    navigate('/wonderful-react/');
   };
 
   const replaceUser = () => {
@@ -75,7 +75,7 @@ const FormChangeUser = () => {
     oldData.splice(oldData.indexOf(currentData), 1, {});
     localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_USERS, JSON.stringify(oldData));
     localStorage.removeItem(LOCAL_STORAGE_KEYS.CURRENT_USER);
-    navigate('/');
+    navigate('/wonderful-react/');
   };
 
   return (

@@ -4,7 +4,7 @@ import './BackLink.scss';
 
 const BackLink = () => {
   return (
-    <Link to="/" className="button-back">
+    <Link to="/wonderful-react/" className="button-back">
       <img alt="Назад" className="button_back__image" src="img/back.png" />
     </Link>
   );

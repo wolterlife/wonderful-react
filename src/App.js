@@ -12,11 +12,11 @@ class App extends React.Component {
   render() {
     return (
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/signIn" element={<SignIn />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/wonderful-react/" element={<Home />} />
+        <Route path="/wonderful-react/admin" element={<Admin />} />
+        <Route path="/wonderful-react/registration" element={<Registration />} />
+        <Route path="/wonderful-react/signIn" element={<SignIn />} />
+        <Route path="/wonderful-react/profile" element={<Profile />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     );

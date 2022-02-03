@@ -23,7 +23,7 @@ const FormAuthSignIn = () => {
         if (email === key.email && password === key.password && email != null && password != null) {
           finded = true;
           localStorage.setItem(LOCAL_STORAGE_KEYS.CURRENT_USER, JSON.stringify(key));
-          navigate('/admin');
+          navigate('/wonderful-react/admin');
         }
       }
       if (!finded) console.log('Почта/пароль введены неправильно');
@@ -35,7 +35,7 @@ const FormAuthSignIn = () => {
       <div className="auth-form__container">
         <p className="auth-form__title">Вход в аккаунт</p>
         <div className="auth-form__img-container">
-          <img src="/img/key.png" alt="Ключ авторизации" className="auth-form__img" />
+          <img src="img/key.png" alt="Ключ авторизации" className="auth-form__img" />
         </div>
         <div className="auth-form__section">
           <TextField
@@ -74,7 +74,7 @@ const FormAuthSignIn = () => {
         </div>
         <div className="auth-form__section">
           <Button
-            onClick={() => navigate('/registration')}
+            onClick={() => navigate('/wonderful-react/registration')}
             style={{
               borderColor: '#ff7500',
               color: '#ff7500',

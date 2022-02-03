@@ -3,11 +3,11 @@ import './HeaderLink.scss';
 import { Link } from 'react-router-dom';
 
 const HeaderLink = () => {
-  let link = '/signIn';
+  let link = '/wonderful-react/signIn';
   let title = 'Вход';
   const data = JSON.parse(localStorage.getItem('currentUser'));
   if (data != null) {
-    link = '/profile';
+    link = '/wonderful-react/profile';
     title = data.firstName;
   }
   return (

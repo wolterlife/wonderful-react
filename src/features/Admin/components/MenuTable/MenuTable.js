@@ -25,7 +25,7 @@ const MenuTable = () => {
         console.log('Error');
     }
     localStorage.setItem('list', JSON.stringify(data));
-    navigate('/admin');
+    navigate('/wonderful-react/admin');
   };
 
   // eslint-disable-next-line array-callback-return,consistent-return

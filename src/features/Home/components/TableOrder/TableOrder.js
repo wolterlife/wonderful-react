@@ -1,12 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks,no-param-reassign */
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import './TableOrder.scss';
 import { database, ref, push } from '../../../../util/firebase';
 
 const TableOrder = prop => {
-  const navigate = useNavigate();
   let orders = [];
 
   const acceptFoo = () => {
@@ -34,7 +32,6 @@ const TableOrder = prop => {
 
   const goToInputFields = () => {
     prop.callPopUp(false);
-    navigate('#delivery');
   };
 
   // eslint-disable-next-line array-callback-return,consistent-return
@@ -265,7 +262,11 @@ const TableOrder = prop => {
             Оплатить
           </Button>
         ) : (
-          <a href="#delivery" onClick={goToInputFields} className="section__button">
+          <a
+            href="/wonderful-react/#delivery"
+            onClick={goToInputFields}
+            className="section__button"
+          >
             Заполнить данные о доставке
           </a>
         )}

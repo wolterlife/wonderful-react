@@ -24,7 +24,7 @@ const OrderList = () => {
   const dellOrder = item => {
     data.splice(data.indexOf(item), 1);
     set(ref(database, 'orders/'), data);
-    navigate('/admin');
+    navigate('/wonderful-react/admin');
   };
 
   const changeStatus = item => {

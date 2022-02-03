@@ -57,7 +57,7 @@ const FormAuthRegistration = () => {
         userData.id = oldData.length; // create id
         localStorage.setItem(LOCAL_STORAGE_KEYS.LIST_USERS, JSON.stringify(oldData));
         localStorage.setItem(LOCAL_STORAGE_KEYS.CURRENT_USER, JSON.stringify(userData));
-        navigate('/admin');
+        navigate('/wonderful-react/');
       } else console.log('Аккаунт уже существует (используйте другой email)');
     } else console.log('Пароли не совпадают');
   };
@@ -143,7 +143,7 @@ const FormAuthRegistration = () => {
           </div>
           <div className="registration__section__input--short registration__button">
             <Button
-              onClick={() => navigate('/signIn')}
+              onClick={() => navigate('/wonderful-react/signIn')}
               style={{
                 borderColor: '#ff7500',
                 color: '#ff7500',
