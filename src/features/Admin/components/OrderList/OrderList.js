@@ -58,7 +58,7 @@ const OrderList = () => {
           <td className="order-list__table-item">{item.id}</td>
           <td className="order-list__table-item">
             {!item.ordFields.isFastDelivery ? (
-              item.ordFields.time.substr(4, 17)
+              item.ordFields.time?.substr(4, 17)
             ) : (
               <p className="order-list__table-fast">Express</p>
             )}

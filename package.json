@@ -2,7 +2,7 @@
   "name": "wonderful-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wolterlife.github.io/wonderful-react",
+  "homepage": "https://wolterlife.github.io/wonderful-react/",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
